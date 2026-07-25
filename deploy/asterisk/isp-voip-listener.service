@@ -1,0 +1,20 @@
+# ISP-BNAS VoIP call listener — AMI event → isp_call_logs।
+# install.sh এটি /etc/systemd/system/-এ কপি করে enable করে।
+# gunicorn-এর মতোই User=isp + EnvironmentFile=.env (isp নিজে .env পড়তে পারে না; systemd root হিসেবে পড়ে)।
+[Unit]
+Description=ISP-BNAS VoIP call listener (Asterisk AMI -> call logs)
+After=network.target mysql.service asterisk.service
+Wants=asterisk.service
+
+[Service]
+Type=simple
+User=isp
+Group=www-data
+WorkingDirectory=/var/www/isp_bnas
+EnvironmentFile=/var/www/isp_bnas/.env
+ExecStart=/var/www/isp_bnas/venv/bin/python /var/www/isp_bnas/manage.py voip_call_listener
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

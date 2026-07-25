@@ -1,0 +1,17 @@
+# ISP-BNAS — gunicorn (`isp` user) কে শুধুমাত্র FreeRADIUS reload/restart করার
+# সীমিত passwordless sudo অনুমতি দেয়।
+#
+# কেন দরকার: নতুন MikroTik router add বা delete করলে RADIUS `nas` table বদলায়।
+# FreeRADIUS এই তালিকা শুধু (re)start/reload-এর সময় SQL থেকে পড়ে। reload না হলে
+# নতুন router-এর auth packet নীরবে drop হয় → "radius timeout"। gunicorn `isp`
+# user হিসেবে চলে, তাই এই নির্দিষ্ট command-এ NOPASSWD দরকার।
+#
+# ─── Install (root হিসেবে একবার) ───────────────────────────────
+#   sudo install -m 0440 -o root -g root \
+#        /var/www/isp_bnas/deploy/isp-freeradius.sudoers \
+#        /etc/sudoers.d/isp-freeradius
+#   sudo visudo -cf /etc/sudoers.d/isp-freeradius   # syntax যাচাই
+#
+# নিরাপত্তা: শুধু এই দুটি exact command — arbitrary sudo নয়।
+
+isp ALL=(root) NOPASSWD: /usr/bin/systemctl reload-or-restart freeradius, /usr/bin/systemctl restart freeradius, /usr/bin/systemctl reload freeradius

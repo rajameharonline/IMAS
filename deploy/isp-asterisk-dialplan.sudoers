@@ -1,0 +1,15 @@
+# ISP-BNAS — gunicorn (`isp` user) কে Asterisk dialplan update করার
+# সীমিত passwordless sudo অনুমতি দেয়।
+#
+# কেন দরকার: extensions.conf (/etc/asterisk/) update করতে `asterisk` owner।
+# gunicorn `isp` user হিসেবে চলে এবং dialplan reload করতে হলে এই file লাগে।
+#
+# ─── Install (root হিসেবে একবার) ───────────────────────────────
+#   sudo install -m 0440 -o root -g root \
+#        /var/www/isp_bnas/deploy/isp-asterisk-dialplan.sudoers \
+#        /etc/sudoers.d/isp-asterisk-dialplan
+#   sudo visudo -cf /etc/sudoers.d/isp-asterisk-dialplan   # syntax যাচাই
+#
+# নিরাপত্তা: শুধু এই exact command — arbitrary sudo নয়।
+
+isp ALL=(root) NOPASSWD: /usr/bin/install -m 0640 -o asterisk -g asterisk /var/www/isp_bnas/deploy/asterisk/configs/extensions.conf /etc/asterisk/extensions.conf

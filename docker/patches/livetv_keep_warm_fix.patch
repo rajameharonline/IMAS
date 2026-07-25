@@ -1,0 +1,18 @@
+--- a/livetv/tasks.py
++++ b/livetv/tasks.py
+@@ -172,7 +172,6 @@
+ KEEP_WARM_PING_TTL = 300  # keep-warm ping কতক্ষণ টেকে (sweep interval 120s-এর বেশি রাখা)
+ 
+ 
+-@shared_task(name='livetv.keep_warm_channels')
+ def _warm_channel(ch):
+     """একটি url channel keep-warm করে → 'refreshed' | 'started' | 'skipped'।
+     (আগের keep_warm loop body-র হুবহু আচরণ)।"""
+@@ -201,6 +200,7 @@
+     return 'skipped'
+ 
+ 
++@shared_task(name='livetv.keep_warm_channels')
+ def keep_warm_channels():
+     from django.conf import settings
+     from django.db import close_old_connections

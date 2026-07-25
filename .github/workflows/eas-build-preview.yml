@@ -1,0 +1,74 @@
+name: EAS Build — Android Preview APK
+
+on:
+  workflow_dispatch:          # manually trigger from GitHub UI
+  push:
+    paths:
+      - 'mobile_app/**'       # mobile_app-এ কোনো change push হলে auto trigger
+    branches:
+      - main
+      - feat/mobile-app-overhaul
+
+jobs:
+  build:
+    name: Build Android APK (preview)
+    runs-on: ubuntu-latest
+
+    # EAS CLI EXPO_TOKEN env থাকলে স্বয়ংক্রিয় authenticate হয় — CI-এর standard pattern।
+    env:
+      EXPO_TOKEN: ${{ secrets.RAJAMEHARONLINE }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      # secret খালি/unset হলে "Not logged in"-এর বদলে পরিষ্কার বার্তা দিই।
+      - name: Check EXPO_TOKEN secret
+        run: |
+          if [ -z "$EXPO_TOKEN" ]; then
+            echo "::error::RAJAMEHARONLINE secret সেট করা নেই বা খালি।"
+            echo "expo.dev → Account → Settings → Access Tokens থেকে একটি token তৈরি করুন,"
+            echo "তারপর GitHub repo → Settings → Secrets and variables → Actions →"
+            echo "New repository secret: নাম = RAJAMEHARONLINE, value = সেই token।"
+            exit 1
+          fi
+          echo "EXPO_TOKEN পাওয়া গেছে (length: ${#EXPO_TOKEN})।"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: mobile_app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: mobile_app
+        # --ignore-scripts: untrusted dependency lifecycle scripts auto-run হতে দেয় না (Sonar S6505)।
+        # তারপর নিজেদের trusted postinstall (patch-package) স্পষ্টভাবে চালাই।
+        run: |
+          npm ci --ignore-scripts
+          npm run postinstall
+
+      - name: Setup EAS
+        uses: expo/expo-github-action@c7b66a9c327a43a8fa7c0158e7f30d6040d2481e # v8.2.1
+        with:
+          eas-version: latest
+          token: ${{ secrets.RAJAMEHARONLINE }}
+
+      - name: Verify EAS authentication
+        working-directory: mobile_app
+        run: eas whoami
+
+      - name: Link EAS project
+        working-directory: mobile_app
+        run: eas init --id 56c3827f-2d4b-44a1-8211-1b308c40bd5c --non-interactive
+
+      - name: Build Android APK
+        working-directory: mobile_app
+        run: eas build --platform android --profile preview --non-interactive
+
+      - name: Print APK download URL
+        working-directory: mobile_app
+        run: |
+          echo "✅ Build submitted to EAS."
+          echo "Download: https://expo.dev/accounts/rajameharonlineapp/projects/isp-bnas/builds"

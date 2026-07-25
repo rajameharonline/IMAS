@@ -1,0 +1,79 @@
+কোথায় বসাবেন
+ফাইল: /etc/nginx/sites-available/isp_bnas
+জায়গা: বর্তমান port-80 block-টা (line 7-19) শেষ হওয়ার পর, অর্থাৎ line 19-এর }-এর ঠিক নিচে নতুন একটা default_server block যোগ করুন।
+
+কী বসাবেন
+
+# ── Walled garden: expired client notice (foreign/hijacked Host) ──
+# DNS hijack-এর কারণে expired client এলোমেলো Host নিয়ে আসে → এই
+# default_server সেগুলো ধরে /expired/ notice page দেখায়।
+# আসল roisp.duckdns.org উপরের named block-এ যায় (অপ্রভাবিত)।
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+
+    # certbot renewal যাতে না ভাঙে
+    location /.well-known/acme-challenge/ {
+        root /var/www/html;
+    }
+
+    location / {
+        # যেকোনো path → সবসময় /expired/ view
+        rewrite ^.*$ /expired/ break;
+        proxy_pass http://isp_django;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host roisp.duckdns.org;   # ALLOWED_HOSTS-এ আছে
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto http;
+    }
+}
+মূল কৌশল: আপনার port-80 block-এ server_name roisp.duckdns.org (named) — তাই আসল domain ওটাতেই যায়। নতুন block-এ default_server + server_name _ — বাকি সব Host (hijacked expired traffic + OS captive probe) এটাতে পড়ে। rewrite ... break যেকোনো path-কে /expired/-এ পাঠায়।
+
+কীভাবে apply করবেন
+
+sudo nano /etc/nginx/sites-available/isp_bnas      # উপরের block যোগ করুন
+sudo nginx -t                                       # syntax test
+sudo systemctl reload nginx                         # কোনো downtime ছাড়াই reload
+যাচাই (apply-এর পর)
+
+# foreign Host দিয়ে port 80-এ হিট করলে notice page আসা উচিত
+curl -s -H "Host: www.google.com" http://127.0.0.1/ | grep -o "মেয়াদ শেষ"
+# আসল domain আগের মতোই HTTPS-এ redirect হওয়া উচিত
+curl -sI -H "Host: roisp.duckdns.org" http://127.0.0.1/ | grep -i location
+প্রথমটায় মেয়াদ শেষ আসবে, দ্বিতীয়টায় Location: https://... থাকবে — তাহলেই ঠিক আছে।
+
+
+
+===========================Snippet=================================
+
+এখন আপনার terminal-এ এই command গুলো এক এক করে চালান (sudo password চাইবে):
+
+
+# ১. ব্যাকআপ
+sudo cp /etc/nginx/sites-available/isp_bnas /etc/nginx/sites-available/isp_bnas.bak
+
+# ২. port-80 block-এর পরে (line 19-এর `}` এর নিচে) snippet insert
+sudo sed -i '19r /var/www/isp_bnas/deploy/walled_garden.nginx.conf' \
+    /etc/nginx/sites-available/isp_bnas
+
+# ৩. syntax test — "syntax is ok" + "test is successful" আসতে হবে
+sudo nginx -t
+
+# ৪. ঠিক থাকলে reload (downtime ছাড়াই)
+sudo systemctl reload nginx
+যাচাই (reload-এর পর)
+
+# foreign Host → notice page আসবে
+curl -s -H "Host: www.google.com" http://127.0.0.1/ | grep -o "মেয়াদ শেষ"
+
+# আসল domain → আগের মতোই HTTPS redirect
+curl -sI -H "Host: roisp.duckdns.org" http://127.0.0.1/ | grep -i location
+প্রথমটায় মেয়াদ শেষ, দ্বিতীয়টায় Location: https://... দেখলেই কাজ হয়েছে।
+
+কিছু ভুল হলে ফিরে যাওয়া
+
+sudo cp /etc/nginx/sites-available/isp_bnas.bak /etc/nginx/sites-available/isp_bnas
+sudo nginx -t && sudo systemctl reload nginx

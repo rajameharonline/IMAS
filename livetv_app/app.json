@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Rajamehar Live TV",
+    "slug": "rajamehar-livetv",
+    "version": "1.0.0",
+    "scheme": "rajameharlive",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "splash": {
+      "backgroundColor": "#0f0f0f"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.rajameharonline.livetv",
+      "versionCode": 29,
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true,
+            "minSdkVersion": 26
+          }
+        }
+      ],
+      "expo-video"
+    ],
+    "owner": "rajameharonlineapp",
+    "extra": {
+      "apiBaseUrl": "https://roisp.duckdns.org/api/v1",
+      "eas": {
+        "projectId": "56c3827f-2d4b-44a1-8211-1b308c40bd5c"
+      }
+    }
+  }
+}

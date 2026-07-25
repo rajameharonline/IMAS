@@ -1,0 +1,20 @@
+[Unit]
+Description=ISP BNAS — SNMP Trap Listener (OLT real-time ONU events)
+After=network.target mysql.service redis-server.service
+
+[Service]
+Type=simple
+User=isp
+Group=www-data
+WorkingDirectory=/var/www/isp_bnas
+EnvironmentFile=/var/www/isp_bnas/.env
+# Standard SNMP trap port 162 — non-root user-কে bind করতে দিতে capability দরকার।
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+ExecStart=/var/www/isp_bnas/venv/bin/python /var/www/isp_bnas/manage.py snmp_trap_listener --host 0.0.0.0 --port 162
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/isp_bnas/logs/snmptrap.log
+StandardError=append:/var/www/isp_bnas/logs/snmptrap.log
+
+[Install]
+WantedBy=multi-user.target

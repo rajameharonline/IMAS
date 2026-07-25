@@ -1,0 +1,29 @@
+.git
+.github
+venv
+.gunicorn
+**/__pycache__
+*.pyc
+.env
+.env.*
+!.env.example
+logs/*
+media/*
+staticfiles/*
+admin_panel/node_modules
+admin_panel/dist
+user_portal/node_modules
+user_portal/dist
+mobile_app
+livetv_app
+*.md
+.vscode
+.claude
+
+# secret/credential ফাইল — .gitignore-এর সাথে মিলিয়ে রাখা (COPY . .-এ যাতে কখনো
+# image layer-এ ঢুকে না যায়; SonarCloud python:S6470/docker:S6470)
+firebase-service-account.json
+**/google-services.json
+.mcp.json
+secrets.py
+**/secrets.py

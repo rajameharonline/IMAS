@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Layout-এর existing background অপরিবর্তিত (bg-gray-100 main area)।
+     Body default font Inter (sans-serif) - typography rule unchanged।
+     Heading default Slab-serif - hierarchy দ্রুত পড়া যায়। */
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+  }
+  h1, h2, h3, h4 { @apply font-slab; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+  }
+  .input {
+    @apply w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  .input-field {
+    @apply border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  .badge-active { @apply bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-expired { @apply bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-suspended { @apply bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-inactive { @apply bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full; }
+}
+
+@layer utilities {
+  /* Mobile horizontal scroll — scrollbar লুকানো */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Dashboard stat/ticket card hover — left-to-right wipe overlay,
+     reference: rajameharonline.ispdigital.cloud .info-box-2.hover-expand-effect */
+  .stat-card-wipe {
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card-wipe::after {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background-color: rgba(0, 0, 0, 0.06);
+    transition: width 0.95s;
+    pointer-events: none;
+  }
+  .stat-card-wipe:hover::after {
+    width: 100%;
+  }
+}
+
+/* OLT "Set Time" বাটনের indeterminate progress bar (OLTListPage.jsx-এর
+   ClockButton ব্যবহার করে: animate-[oltclock_1.1s_ease-in-out_infinite])।
+   কাজটি ~৩s নেয় বলে নির্দিষ্ট শতাংশ দেখানো যায় না — তাই বাঁ↔ডান sweep। */
+@keyframes oltclock {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}

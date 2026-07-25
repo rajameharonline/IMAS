@@ -1,0 +1,119 @@
+{
+  "expo": {
+    "name": "Rajamehar Online",
+    "slug": "isp-bnas",
+    "version": "1.1.0",
+    "scheme": "rajameharonline",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/56c3827f-2d4b-44a1-8211-1b308c40bd5c",
+      "fallbackToCacheTimeout": 10000
+    },
+    "splash": {
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.rajameharonline.client",
+      "buildNumber": "2",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "remote-notification"
+        ],
+        "NSLocationWhenInUseUsageDescription": "আপনার সঠিক সার্ভিস লোকেশন (ম্যাপ) সেট করতে অ্যাপটি আপনার বর্তমান অবস্থান ব্যবহার করে।",
+        "NSMicrophoneUsageDescription": "ভয়েস কল করার জন্য অ্যাপটি আপনার মাইক্রোফোন ব্যবহার করে।",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoadsInWebContent": true
+        }
+      },
+      "bitcode": false
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.rajameharonline.client",
+      "versionCode": 2,
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "POST_NOTIFICATIONS",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "RECORD_AUDIO",
+        "MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_PHONE_CALL",
+        "android.permission.FOREGROUND_SERVICE_DATA_SYNC",
+        "android.permission.BIND_TELECOM_CONNECTION_SERVICE",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.WAKE_LOCK",
+        "android.permission.BLUETOOTH",
+        "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "@react-native-firebase/app",
+      "./plugins/withCallKeep",
+      "./plugins/withNotifeeForegroundType",
+      "./plugins/withGradleMemory",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "আপনার সঠিক সার্ভিস লোকেশন (ম্যাপ) সেট করতে অ্যাপটি আপনার বর্তমান অবস্থান ব্যবহার করে।"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#1d435d"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ],
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": false,
+          "microphonePermission": "ভয়েস কল করার জন্য অ্যাপটি আপনার মাইক্রোফোন ব্যবহার করে।"
+        }
+      ],
+      "./plugins/withFirebaseMessagingFix"
+    ],
+    "extra": {
+      "apiBaseUrl": "https://roisp.duckdns.org/api/v1",
+      "eas": {
+        "projectId": "56c3827f-2d4b-44a1-8211-1b308c40bd5c"
+      }
+    },
+    "owner": "rajameharonlineapp"
+  }
+}

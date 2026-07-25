@@ -1,0 +1,127 @@
+# ISP-BNAS — Phase 1 Docker stack (side-by-side টেস্ট, বর্তমান systemd gunicorn/nginx বন্ধ হবে না)
+#
+# MySQL (isp_bnas + radius), Redis, FreeRADIUS, Asterisk, coturn, SNMP — সব host-এ native থাকছে
+# (roadmap সিদ্ধান্ত অনুযায়ী)। এই কন্টেইনারগুলো host_gateway দিয়ে ওগুলোর সাথে কানেক্ট করে।
+#
+# চালু করার আগে: .env.docker তৈরি করুন — cp .env .env.docker, তারপর DB_HOST/RADIUS_DB_HOST/
+# REDIS_URL/CELERY_BROKER_URL-এর হোস্টনেম host.docker.internal-এ বদলান (password/auth অংশ
+# অক্ষত রেখে, যেমন .env.docker.example-এ বর্ণনা করা আছে)।
+#
+# গুরুত্বপূর্ণ: REDIS_URL/CELERY_BROKER_URL এই ফাইলে environment: ব্লকে hardcode করা হয়নি
+# ইচ্ছাকৃতভাবে — Redis-এ requirepass সেট থাকায় password-সহ URL দরকার, যেটা শুধু
+# .env.docker (env_file:) থেকেই আসা উচিত। এখানে hardcode করলে env_file-এর মান override
+# হয়ে password-বিহীন URL ব্যবহৃত হবে ও AuthenticationError দেবে (একবার এই ভুলই হয়েছিল)।
+#
+# ব্যবহার:
+#   docker compose build
+#   docker compose up -d
+#   docker compose exec django-app python manage.py migrate   # (ম্যানুয়াল, ইচ্ছাকৃতভাবে auto নয়)
+#   docker compose exec django-app python manage.py collectstatic --noinput
+#   curl http://localhost:8081/api/...   (nginx কন্টেইনার — পুরনো host nginx 80/8080 অক্ষত থাকবে)
+
+services:
+  django-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: isp-bnas-app:latest
+    env_file:
+      - .env.docker
+    environment:
+      DB_HOST: host.docker.internal
+      CELERY_RESULT_BACKEND: django-db
+      RADIUS_DB_HOST: host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./media:/var/www/isp_bnas/media
+      - ./staticfiles:/var/www/isp_bnas/staticfiles
+      - ./logs:/var/www/isp_bnas/logs
+    ports:
+      - "8001:8000"   # পুরনো systemd gunicorn (127.0.0.1:8000) এর সাথে conflict এড়াতে আলাদা host port
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 2048M
+
+  celery-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: isp-bnas-app:latest
+    env_file:
+      - .env.docker
+    environment:
+      DB_HOST: host.docker.internal
+      CELERY_RESULT_BACKEND: django-db
+      RADIUS_DB_HOST: host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./media:/var/www/isp_bnas/media
+      - ./logs:/var/www/isp_bnas/logs
+    entrypoint: ["entrypoint.sh"]
+    command: ["celery", "-A", "config", "worker", "--loglevel=info"]
+    depends_on:
+      - django-app
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 10G
+
+  celery-beat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: isp-bnas-app:latest
+    env_file:
+      - .env.docker
+    environment:
+      DB_HOST: host.docker.internal
+      CELERY_RESULT_BACKEND: django-db
+      RADIUS_DB_HOST: host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./media:/var/www/isp_bnas/media
+      - ./logs:/var/www/isp_bnas/logs
+    entrypoint: ["entrypoint.sh"]
+    command: ["celery", "-A", "config", "beat", "--loglevel=info", "--scheduler", "django_celery_beat.schedulers:DatabaseScheduler"]
+    depends_on:
+      - django-app
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+  nginx:
+    image: nginx:1.27-alpine
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./staticfiles:/var/www/isp_bnas/staticfiles:ro
+      - ./media:/var/www/isp_bnas/media:ro
+      - ./admin_panel/dist:/var/www/isp_bnas/admin_panel/dist:ro
+      - ./user_portal/dist:/var/www/isp_bnas/user_portal/dist:ro
+    ports:
+      - "8081:80"     # admin_panel + /api/ + /admin/  (পুরনো host nginx-এর 80 এর সাথে conflict নেই)
+      - "8091:8080"   # user_portal + /api/            (পুরনো host nginx-এর 8080 এর সাথে conflict নেই)
+    depends_on:
+      - django-app
+    restart: unless-stopped
+
+# subnet পাকাপাকিভাবে pin করা — নাহলে docker compose প্রতিবার network re-create হলে
+# ভিন্ন subnet বেছে নিতে পারে (172.19 এর বদলে অন্য কিছু), যেটা MySQL/Redis GRANT ও
+# bind-address-কে আবার ভাঙবে। এই subnet-এর জন্যই MySQL/Redis host-side কনফিগার করা আছে।
+networks:
+  default:
+    name: isp_bnas_default
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+          gateway: 172.19.0.1

@@ -1,0 +1,36 @@
+# EAS Build — শুধু mobile_app দরকার। backend/runtime ফাইল bundle থেকে বাদ।
+# (এই ফাইলটি .gitignore-এর মতো কাজ করে, কিন্তু শুধু EAS upload-এর জন্য)
+
+# ── Runtime socket/pid — এগুলো কপি করা যায় না (EAS error-এর কারণ) ──
+.gunicorn/
+*.sock
+*.ctl
+*.pid
+
+# ── Python / Django backend ──
+venv/
+__pycache__/
+*.pyc
+*.pyo
+logs/
+media/
+staticfiles/
+static/
+*.sqlite3
+.env
+
+# ── অন্য JS প্রজেক্ট (admin panel) ──
+admin_panel/node_modules/
+admin_panel/dist/
+
+# ── Firebase service account (secret — কখনো bundle-এ নয়) ──
+firebase-service-account.json
+
+# ── Live TV App (mobile_app build-এ দরকার নেই; android build artifacts বড়) ──
+livetv_app/android/
+livetv_app/node_modules/
+
+# ── git/IDE ──
+.git/
+.vscode/
+.idea/

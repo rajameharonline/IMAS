@@ -1,0 +1,2166 @@
+/var/www/isp_bnas
+|-- accounting
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_initial.py
+|   |   |-- 0003_alter_expense_options_alter_income_options_and_more.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_initial.cpython-314.pyc
+|   |       |-- 0003_alter_expense_options_alter_income_options_and_more.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- accounts
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_user_fcm_token.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_user_fcm_token.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- admin
+|   |-- admin.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   `-- __init__.py
+|   |-- models.py
+|   |-- tests.py
+|   `-- views.py
+|-- admin_panel
+|   |-- dist
+|   |   |-- assets
+|   |   |   |-- chunk-CilyBKbf.js
+|   |   |   |-- GenericListPage-BSNzGCET.js
+|   |   |   |-- index-BUAwd3OA.js
+|   |   |   |-- index-DoOE5WWS.css
+|   |   |   |-- index.es-CfreaB5B.js
+|   |   |   `-- purify.es-CVJs6zIT.js
+|   |   |-- favicon.svg
+|   |   |-- icons.svg
+|   |   `-- index.html
+|   |-- eslint.config.js
+|   |-- index.html
+|   |-- package.json
+|   |-- package-lock.json
+|   |-- postcss.config.js
+|   |-- public
+|   |   |-- favicon.svg
+|   |   `-- icons.svg
+|   |-- README.md
+|   |-- src
+|   |   |-- App.css
+|   |   |-- App.jsx
+|   |   |-- assets
+|   |   |   |-- hero.png
+|   |   |   |-- react.svg
+|   |   |   `-- vite.svg
+|   |   |-- components
+|   |   |   |-- CountdownTimer.jsx
+|   |   |   |-- Layout.jsx
+|   |   |   |-- OltRxModal.jsx
+|   |   |   |-- OpenTicketModal.jsx
+|   |   |   |-- Sidebar.jsx
+|   |   |   |-- SoftphoneDialer.jsx
+|   |   |   `-- SoftphoneWidget.jsx
+|   |   |-- context
+|   |   |   |-- AuthContext.jsx
+|   |   |   |-- CompanyContext.jsx
+|   |   |   `-- PermissionContext.jsx
+|   |   |-- index.css
+|   |   |-- main.jsx
+|   |   |-- pages
+|   |   |   |-- accounting
+|   |   |   |   |-- AccountBalancesPage.jsx
+|   |   |   |   |-- AccountingDashboard.jsx
+|   |   |   |   |-- AccountTransactionsPage.jsx
+|   |   |   |   |-- AddExpensePage.jsx
+|   |   |   |   |-- AddIncomePage.jsx
+|   |   |   |   |-- BalanceSheetPage.jsx
+|   |   |   |   |-- CashBookPage.jsx
+|   |   |   |   |-- ChartOfAccountsPage.jsx
+|   |   |   |   |-- CompareProfitLossPage.jsx
+|   |   |   |   |-- CreateJournalVoucherPage.jsx
+|   |   |   |   |-- CreditVoucherPage.jsx
+|   |   |   |   |-- DebitVoucherPage.jsx
+|   |   |   |   |-- FinancialReports.jsx
+|   |   |   |   |-- IncomeExpenseManager.jsx
+|   |   |   |   |-- JournalEntriesPage.jsx
+|   |   |   |   |-- JournalVoucherPage.jsx
+|   |   |   |   |-- ProfitLossPage.jsx
+|   |   |   |   `-- TrialBalancePage.jsx
+|   |   |   |-- AccountPage.jsx
+|   |   |   |-- bandwidth
+|   |   |   |   |-- bandwidthHelpers.js
+|   |   |   |   |-- ItemCategoryFormPage.jsx
+|   |   |   |   |-- ItemCategoryPage.jsx
+|   |   |   |   |-- ItemPage.jsx
+|   |   |   |   |-- ProviderBillListPage.jsx
+|   |   |   |   |-- ProviderDetailPage.jsx
+|   |   |   |   |-- ProviderListPage.jsx
+|   |   |   |   |-- PurchaseBillFormPage.jsx
+|   |   |   |   `-- PurchaseBillInvoicePage.jsx
+|   |   |   |-- billing
+|   |   |   |   |-- BillList.jsx
+|   |   |   |   |-- DailyCollection.jsx
+|   |   |   |   |-- PaymentList.jsx
+|   |   |   |   `-- PaymentReminderPage.jsx
+|   |   |   |-- clients
+|   |   |   |   |-- AppsManagementPage.jsx
+|   |   |   |   |-- ClientForm.jsx
+|   |   |   |   |-- ClientList.jsx
+|   |   |   |   |-- ClientPortalPage.jsx
+|   |   |   |   |-- ClientProfile.jsx
+|   |   |   |   |-- CustomerSearchPage.jsx
+|   |   |   |   `-- LeftClientPage.jsx
+|   |   |   |-- config
+|   |   |   |   |-- ConfigPage.jsx
+|   |   |   |   |-- ConnectionTypePage.jsx
+|   |   |   |   |-- DistrictPage.jsx
+|   |   |   |   |-- PackagePage.jsx
+|   |   |   |   `-- UpazilaPage.jsx
+|   |   |   |-- Dashboard.jsx
+|   |   |   |-- GenericListPage.jsx
+|   |   |   |-- hr
+|   |   |   |   |-- AddEmployeePage.jsx
+|   |   |   |   |-- AttendancePage.jsx
+|   |   |   |   |-- DepartmentPage.jsx
+|   |   |   |   |-- EmployeePage.jsx
+|   |   |   |   |-- PayHeadPage.jsx
+|   |   |   |   |-- PayrollPage.jsx
+|   |   |   |   |-- PayslipPage.jsx
+|   |   |   |   |-- PositionPage.jsx
+|   |   |   |   |-- RejoinPage.jsx
+|   |   |   |   |-- ResignationPage.jsx
+|   |   |   |   |-- ResignRulePage.jsx
+|   |   |   |   `-- SalarySheetPage.jsx
+|   |   |   |-- inventory
+|   |   |   |   |-- ItemCategoryPage.jsx
+|   |   |   |   |-- ItemPage.jsx
+|   |   |   |   |-- StockPage.jsx
+|   |   |   |   |-- StoreLocationPage.jsx
+|   |   |   |   `-- UnitPage.jsx
+|   |   |   |-- livetv
+|   |   |   |   |-- FTPMovieServerPage.jsx
+|   |   |   |   |-- LiveTVPage.jsx
+|   |   |   |   `-- LiveTVRegistrationPage.jsx
+|   |   |   |-- Login.jsx
+|   |   |   |-- mikrotik
+|   |   |   |   |-- BulkClientImportPage.jsx
+|   |   |   |   `-- ServerList.jsx
+|   |   |   |-- mobile
+|   |   |   |   |-- AppBannerPage.jsx
+|   |   |   |   |-- AppVersionPage.jsx
+|   |   |   |   `-- MobilePushPage.jsx
+|   |   |   |-- network
+|   |   |   |   |-- NetworkMap.jsx
+|   |   |   |   `-- NetworkTopology.jsx
+|   |   |   |-- olt
+|   |   |   |   |-- OLTListPage.jsx
+|   |   |   |   `-- ONUMonitoringPage.jsx
+|   |   |   |-- pop
+|   |   |   |   |-- ClientPGWPaymentsPage.jsx
+|   |   |   |   |-- POPAddPage.jsx
+|   |   |   |   |-- POPFundingPage.jsx
+|   |   |   |   |-- POPListPage.jsx
+|   |   |   |   |-- POPNoticePage.jsx
+|   |   |   |   |-- POPPackagePage.jsx
+|   |   |   |   |-- POPPGWSettlementPage.jsx
+|   |   |   |   |-- POPProfilePage.jsx
+|   |   |   |   `-- POPTariffPage.jsx
+|   |   |   |-- purchase
+|   |   |   |   |-- PurchaseEntryPage.jsx
+|   |   |   |   |-- PurchaseListPage.jsx
+|   |   |   |   |-- RequisitionEntryPage.jsx
+|   |   |   |   |-- RequisitionListPage.jsx
+|   |   |   |   `-- VendorListPage.jsx
+|   |   |   |-- radius
+|   |   |   |   |-- ClientTrafficPage.jsx
+|   |   |   |   |-- OnlineClientMonitoring.jsx
+|   |   |   |   `-- RadiusServerPage.jsx
+|   |   |   |-- sales
+|   |   |   |   |-- CreateSalesInvoicePage.jsx
+|   |   |   |   |-- ProductSalesInvoicePage.jsx
+|   |   |   |   `-- ServiceSalesInvoicePage.jsx
+|   |   |   |-- settings
+|   |   |   |   `-- SettingsPage.jsx
+|   |   |   |-- sms
+|   |   |   |   |-- IndividualSmsPage.jsx
+|   |   |   |   |-- SendSmsPage.jsx
+|   |   |   |   |-- SmsGatewayPage.jsx
+|   |   |   |   `-- SmsTemplatePage.jsx
+|   |   |   |-- support
+|   |   |   |   |-- ClientSupportPage.jsx
+|   |   |   |   |-- SupportHistoryPage.jsx
+|   |   |   |   `-- TicketTypePage.jsx
+|   |   |   |-- system
+|   |   |   |   |-- AppUsersPage.jsx
+|   |   |   |   |-- PaymentGatewaysPage.jsx
+|   |   |   |   `-- UsersRolesPage.jsx
+|   |   |   |-- tasks
+|   |   |   |   |-- AllTasksPage.jsx
+|   |   |   |   |-- MyTasksPage.jsx
+|   |   |   |   `-- taskConstants.js
+|   |   |   `-- voip
+|   |   |       |-- CallLogPage.jsx
+|   |   |       |-- HotlineControlPage.jsx
+|   |   |       |-- IVRMenuPage.jsx
+|   |   |       |-- PBXAgentPage.jsx
+|   |   |       |-- RingGroupPage.jsx
+|   |   |       `-- VoiceSmsPage.jsx
+|   |   |-- services
+|   |   |   `-- authService.js
+|   |   |-- utils
+|   |   |   `-- api.js
+|   |   `-- voip
+|   |       `-- SoftphoneContext.jsx
+|   |-- tailwind.config.js
+|   |-- user_portal
+|   |   |-- eslint.config.js
+|   |   |-- index.html
+|   |   |-- package.json
+|   |   |-- public
+|   |   |   |-- favicon.svg
+|   |   |   `-- icons.svg
+|   |   |-- README.md
+|   |   |-- src
+|   |   |   |-- App.css
+|   |   |   |-- App.jsx
+|   |   |   |-- assets
+|   |   |   |   |-- hero.png
+|   |   |   |   |-- react.svg
+|   |   |   |   `-- vite.svg
+|   |   |   |-- index.css
+|   |   |   `-- main.jsx
+|   |   `-- vite.config.js
+|   `-- vite.config.js
+|-- ai.md
+|-- assets
+|   |-- admin.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- billing
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- ledger.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_initial.py
+|   |   |-- 0003_add_notes_to_bill.py
+|   |   |-- 0004_payment_approved_by_payment_created_by.py
+|   |   |-- 0005_payment_bill_nullable_advance_method.py
+|   |   |-- 0006_bill_is_auto_unique_constraint.py
+|   |   |-- 0007_alter_bill_options_alter_bill_is_auto_webhookpayment.py
+|   |   |-- 0008_payment_client_fk.py
+|   |   |-- 0009_reminderrule_reminderlog.py
+|   |   |-- 0010_alter_reminderrule_message_template.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_initial.cpython-314.pyc
+|   |       |-- 0003_add_notes_to_bill.cpython-314.pyc
+|   |       |-- 0004_payment_approved_by_payment_created_by.cpython-314.pyc
+|   |       |-- 0005_payment_bill_nullable_advance_method.cpython-314.pyc
+|   |       |-- 0006_bill_is_auto_unique_constraint.cpython-314.pyc
+|   |       |-- 0007_alter_bill_options_alter_bill_is_auto_webhookpayment.cpython-314.pyc
+|   |       |-- 0008_payment_client_fk.cpython-314.pyc
+|   |       |-- 0009_reminderrule_reminderlog.cpython-314.pyc
+|   |       |-- 0010_alter_reminderrule_message_template.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- ledger.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   |-- reminder_service.cpython-314.pyc
+|   |   |-- services.cpython-314.pyc
+|   |   `-- tasks.cpython-314.pyc
+|   |-- reminder_service.py
+|   |-- services.py
+|   |-- tasks.py
+|   |-- tests.py
+|   `-- views.py
+|-- change_domain.sh
+|-- CLAUDE.md
+|-- clients
+|   |-- activity.py
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- mac_vendor.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_initial.py
+|   |   |-- 0003_client_pppoe_profile_alter_client_address.py
+|   |   |-- 0004_add_change_status_logs.py
+|   |   |-- 0005_left_client_recovery_fields.py
+|   |   |-- 0006_client_expiry_day.py
+|   |   |-- 0007_clientactivitylog.py
+|   |   |-- 0008_client_advance_balance.py
+|   |   |-- 0009_client_is_vip.py
+|   |   |-- 0010_client_is_renewed_renewed_at.py
+|   |   |-- 0011_add_billing_start_month.py
+|   |   |-- 0012_add_reg_form_pic.py
+|   |   |-- 0013_add_map_lat_lng_to_client.py
+|   |   |-- 0014_add_payment_deleted_event.py
+|   |   |-- 0015_client_mobile_fields.py
+|   |   |-- 0016_client_monthly_traffic.py
+|   |   |-- 0017_client_app_password.py
+|   |   |-- 0018_seed_existing_app_passwords.py
+|   |   |-- 0019_client_father_area_house.py
+|   |   |-- 0020_macvendor.py
+|   |   |-- 0021_client_cable_meter_client_color_of_cord_and_more.py
+|   |   |-- 0022_client_remote_admin_pass_client_remote_admin_user_and_more.py
+|   |   |-- 0023_add_performance_indexes.py
+|   |   |-- 0024_client_pop_client_pop_exported_and_more.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_initial.cpython-314.pyc
+|   |       |-- 0003_client_pppoe_profile_alter_client_address.cpython-314.pyc
+|   |       |-- 0004_add_change_status_logs.cpython-314.pyc
+|   |       |-- 0005_left_client_recovery_fields.cpython-314.pyc
+|   |       |-- 0006_client_expiry_day.cpython-314.pyc
+|   |       |-- 0007_clientactivitylog.cpython-314.pyc
+|   |       |-- 0008_client_advance_balance.cpython-314.pyc
+|   |       |-- 0009_client_is_vip.cpython-314.pyc
+|   |       |-- 0010_client_is_renewed_renewed_at.cpython-314.pyc
+|   |       |-- 0011_add_billing_start_month.cpython-314.pyc
+|   |       |-- 0012_add_reg_form_pic.cpython-314.pyc
+|   |       |-- 0013_add_map_lat_lng_to_client.cpython-314.pyc
+|   |       |-- 0014_add_payment_deleted_event.cpython-314.pyc
+|   |       |-- 0015_client_mobile_fields.cpython-314.pyc
+|   |       |-- 0016_client_monthly_traffic.cpython-314.pyc
+|   |       |-- 0017_client_app_password.cpython-314.pyc
+|   |       |-- 0018_seed_existing_app_passwords.cpython-314.pyc
+|   |       |-- 0019_client_father_area_house.cpython-314.pyc
+|   |       |-- 0020_macvendor.cpython-314.pyc
+|   |       |-- 0021_client_cable_meter_client_color_of_cord_and_more.cpython-314.pyc
+|   |       |-- 0022_client_remote_admin_pass_client_remote_admin_user_and_more.cpython-314.pyc
+|   |       |-- 0023_add_performance_indexes.cpython-314.pyc
+|   |       |-- 0024_client_pop_client_pop_exported_and_more.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- activity.cpython-314.pyc
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- mac_vendor.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- config
+|   |-- asgi.py
+|   |-- celery.py
+|   |-- __init__.py
+|   |-- __pycache__
+|   |   |-- celery.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- settings.cpython-314.pyc
+|   |   |-- urls.cpython-314.pyc
+|   |   |-- walled_garden.cpython-314.pyc
+|   |   `-- wsgi.cpython-314.pyc
+|   |-- settings.py
+|   |-- urls.py
+|   |-- walled_garden.py
+|   `-- wsgi.py
+|-- configuration
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_package_speed_profile.py
+|   |   |-- 0003_package_ip_pool_name.py
+|   |   |-- 0004_clienttype_image.py
+|   |   |-- 0005_protocoltype_mikrotik_radius_fields.py
+|   |   |-- 0006_package_is_free.py
+|   |   |-- 0007_package_router_fk.py
+|   |   |-- 0008_district_upazila.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_package_speed_profile.cpython-314.pyc
+|   |       |-- 0003_package_ip_pool_name.cpython-314.pyc
+|   |       |-- 0004_clienttype_image.cpython-314.pyc
+|   |       |-- 0005_protocoltype_mikrotik_radius_fields.cpython-314.pyc
+|   |       |-- 0006_package_is_free.cpython-314.pyc
+|   |       |-- 0007_package_router_fk.cpython-314.pyc
+|   |       |-- 0008_district_upazila.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   `-- signals.cpython-314.pyc
+|   |-- signals.py
+|   |-- tests.py
+|   `-- views.py
+|-- DATA_RESET_GUIDE.md
+|-- deploy
+|   |-- add_apk_https_location.sh
+|   |-- app_download.nginx.conf
+|   |-- asterisk
+|   |   |-- configs
+|   |   |   |-- ari.conf
+|   |   |   |-- extensions.conf
+|   |   |   |-- http.conf
+|   |   |   |-- manager.conf
+|   |   |   |-- pjsip.conf
+|   |   |   `-- rtp.conf
+|   |   |-- coturn
+|   |   |   |-- setup_coturn.sh
+|   |   |   `-- turnserver.conf
+|   |   |-- fix_media_nat.sh
+|   |   |-- install.sh
+|   |   |-- isp-voip-listener.service
+|   |   |-- mikrotik-voip-portforward.rsc
+|   |   `-- README.md
+|   |-- dynamic_apk_download.sh
+|   |-- isp-asterisk-dialplan.sudoers
+|   |-- isp-freeradius.sudoers
+|   |-- isp-snmptrap.service
+|   |-- mysql_backup.sh
+|   |-- phpmyadmin.nginx.conf
+|   |-- SNMP_TRAP_SETUP.md
+|   |-- walled_garden_apk.nginx.conf
+|   `-- walled_garden.nginx.conf
+|-- docker
+|   |-- deploy.sh
+|   |-- DOCKER_REMAINING_WORK.md
+|   |-- DR_MIGRATION_PLAN.md
+|   |-- entrypoint.sh
+|   |-- HOST_NETWORKING_README.md
+|   |-- LIVETV_KEEP_WARM_FIX_PLAN.md
+|   |-- LIVETV_KEEP_WARM_TEST_PLAN.md
+|   |-- mobile-build
+|   |   |-- Dockerfile
+|   |   `-- README_REMOTE_SETUP.md
+|   |-- nginx.conf
+|   |-- NGINX_OPTION1_CUTOVER_README.md
+|   |-- nginx_option1_upstream_patch.sh
+|   |-- observe_phase1_celery.sh
+|   |-- patches
+|   |   `-- livetv_keep_warm_fix.patch
+|   |-- PHASE1_DOCKER_RUNBOOK.md
+|   |-- PHASE1_DOCKER_WORKLOG.md
+|   |-- PHASE1_STABILITY_SCORECARD.md
+|   |-- rotate_redis_password.sh
+|   `-- setup_host_networking.sh
+|-- docker-compose.yml
+|-- Dockerfile
+|-- firebase-service-account.json
+|-- hr
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- ledger.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_add_department_model.py
+|   |   |-- 0003_add_payhead_model.py
+|   |   |-- 0004_add_payroll_models.py
+|   |   |-- 0005_employee_extended_fields.py
+|   |   |-- 0006_add_position_model.py
+|   |   |-- 0007_payslip_entry_and_employee_payroll.py
+|   |   |-- 0008_alter_employee_district_alter_employee_facebook_link_and_more.py
+|   |   |-- 0009_employeeadvance_advancerecovery.py
+|   |   |-- 0010_resignrule_resignation.py
+|   |   |-- 0011_rejoin.py
+|   |   |-- 0012_collectorcashbalance_collectorcashtransaction.py
+|   |   |-- 0013_employee_position.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_add_department_model.cpython-314.pyc
+|   |       |-- 0003_add_payhead_model.cpython-314.pyc
+|   |       |-- 0004_add_payroll_models.cpython-314.pyc
+|   |       |-- 0005_employee_extended_fields.cpython-314.pyc
+|   |       |-- 0006_add_position_model.cpython-314.pyc
+|   |       |-- 0007_payslip_entry_and_employee_payroll.cpython-314.pyc
+|   |       |-- 0008_alter_employee_district_alter_employee_facebook_link_and_more.cpython-314.pyc
+|   |       |-- 0009_employeeadvance_advancerecovery.cpython-314.pyc
+|   |       |-- 0010_resignrule_resignation.cpython-314.pyc
+|   |       |-- 0011_rejoin.cpython-314.pyc
+|   |       |-- 0012_collectorcashbalance_collectorcashtransaction.cpython-314.pyc
+|   |       |-- 0013_employee_position.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- ledger.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- install.sh
+|-- inventory
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_alter_item_options_alter_itemcategory_options_and_more.py
+|   |   |-- 0003_storelocation_short_value_item_type_serialized_rate.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_alter_item_options_alter_itemcategory_options_and_more.cpython-314.pyc
+|   |       |-- 0003_storelocation_short_value_item_type_serialized_rate.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- livetv
+|   |-- admin.py
+|   |-- api
+|   |   |-- auth_views.py
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- auth_views.cpython-314.pyc
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- management
+|   |   |-- commands
+|   |   |   |-- enable_direct_relay.py
+|   |   |   |-- __init__.py
+|   |   |   `-- __pycache__
+|   |   |       |-- enable_direct_relay.cpython-314.pyc
+|   |   |       `-- __init__.cpython-314.pyc
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       `-- __init__.cpython-314.pyc
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_tvchannel_audio_device_tvchannel_device_path_and_more.py
+|   |   |-- 0003_add_tvcategory_dynamic.py
+|   |   |-- 0004_create_category_table.py
+|   |   |-- 0005_device_path_max_length_500.py
+|   |   |-- 0006_add_extra_urls.py
+|   |   |-- 0007_logo_url_max_length_1000.py
+|   |   |-- 0008_name_slug_max_length.py
+|   |   |-- 0009_slug_max_255.py
+|   |   |-- 0010_last_ping_fields.py
+|   |   |-- 0011_content_check_fields.py
+|   |   |-- 0012_livetv_subscriber.py
+|   |   |-- 0013_ftpvideocontent.py
+|   |   |-- 0014_add_video_filename.py
+|   |   |-- 0015_add_thumbnail_filename.py
+|   |   |-- 0016_tvchannel_direct_relay.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_tvchannel_audio_device_tvchannel_device_path_and_more.cpython-314.pyc
+|   |       |-- 0003_add_tvcategory_dynamic.cpython-314.pyc
+|   |       |-- 0004_create_category_table.cpython-314.pyc
+|   |       |-- 0005_device_path_max_length_500.cpython-314.pyc
+|   |       |-- 0006_add_extra_urls.cpython-314.pyc
+|   |       |-- 0007_logo_url_max_length_1000.cpython-314.pyc
+|   |       |-- 0008_name_slug_max_length.cpython-314.pyc
+|   |       |-- 0009_slug_max_255.cpython-314.pyc
+|   |       |-- 0010_last_ping_fields.cpython-314.pyc
+|   |       |-- 0011_content_check_fields.cpython-314.pyc
+|   |       |-- 0012_livetv_subscriber.cpython-314.pyc
+|   |       |-- 0013_ftpvideocontent.cpython-314.pyc
+|   |       |-- 0014_add_video_filename.cpython-314.pyc
+|   |       |-- 0015_add_thumbnail_filename.cpython-314.pyc
+|   |       |-- 0016_tvchannel_direct_relay.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   `-- tasks.cpython-314.pyc
+|   |-- services
+|   |   |-- app_visibility.py
+|   |   |-- hls_proxy_service.py
+|   |   |-- __init__.py
+|   |   |-- netloc_allowlist.py
+|   |   |-- playlist_parser.py
+|   |   |-- __pycache__
+|   |   |   |-- app_visibility.cpython-314.pyc
+|   |   |   |-- hls_proxy_service.cpython-314.pyc
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- netloc_allowlist.cpython-314.pyc
+|   |   |   |-- playlist_parser.cpython-314.pyc
+|   |   |   `-- stream_service.cpython-314.pyc
+|   |   `-- stream_service.py
+|   `-- tasks.py
+|-- livetv_app
+|   |-- android
+|   |   |-- app
+|   |   |   |-- build
+|   |   |   |   |-- generated
+|   |   |   |   |-- gmpAppId.txt
+|   |   |   |   |-- intermediates
+|   |   |   |   |-- kotlin
+|   |   |   |   |-- kotlinToolingMetadata
+|   |   |   |   |-- outputs
+|   |   |   |   `-- tmp
+|   |   |   |-- build.gradle
+|   |   |   |-- debug.keystore
+|   |   |   |-- google-services.json
+|   |   |   |-- proguard-rules.pro
+|   |   |   `-- src
+|   |   |       |-- debug
+|   |   |       |-- debugOptimized
+|   |   |       `-- main
+|   |   |-- build
+|   |   |   |-- generated
+|   |   |   |   `-- autolinking
+|   |   |   `-- reports
+|   |   |       `-- problems
+|   |   |-- build.gradle
+|   |   |-- gradle
+|   |   |   `-- wrapper
+|   |   |       |-- gradle-wrapper.jar
+|   |   |       `-- gradle-wrapper.properties
+|   |   |-- gradle.properties
+|   |   |-- gradlew
+|   |   |-- gradlew.bat
+|   |   `-- settings.gradle
+|   |-- App.js
+|   |-- app.json
+|   |-- assets
+|   |   |-- android-icon-background.png
+|   |   |-- android-icon-foreground.png
+|   |   |-- android-icon-monochrome.png
+|   |   `-- icon.png
+|   |-- babel.config.js
+|   |-- eas.json
+|   |-- google-services.json
+|   |-- index.js
+|   |-- package.json
+|   |-- package-lock.json
+|   `-- src
+|       |-- components
+|       |   `-- ErrorBoundary.js
+|       |-- context
+|       |   `-- AuthContext.js
+|       |-- screens
+|       |   |-- auth
+|       |   |   `-- LoginScreen.js
+|       |   |-- channels
+|       |   |   |-- ChannelGridScreen.js
+|       |   |   `-- ChannelListScreen.js
+|       |   |-- ftp
+|       |   |   |-- FTPContentScreen.js
+|       |   |   |-- FTPListScreen.js
+|       |   |   |-- FTPVideoPlayerScreen.js
+|       |   |   `-- WebViewScreen.js
+|       |   |-- home
+|       |   |   |-- HomeScreen.js
+|       |   |   `-- MenuScreen.js
+|       |   `-- player
+|       |       `-- PlayerScreen.js
+|       `-- services
+|           `-- api.js
+|-- logs
+|   |-- bkash_sns.log
+|   |-- bkash_sns.log.1
+|   |-- bkash_sns.log.2.gz
+|   |-- celery_beat.log
+|   |-- celery_beat.log.1
+|   |-- celery_beat.log.10.gz
+|   |-- celery_beat.log.11.gz
+|   |-- celery_beat.log.12.gz
+|   |-- celery_beat.log.13.gz
+|   |-- celery_beat.log.14.gz
+|   |-- celery_beat.log.2.gz
+|   |-- celery_beat.log.3.gz
+|   |-- celery_beat.log.4.gz
+|   |-- celery_beat.log.5.gz
+|   |-- celery_beat.log.6.gz
+|   |-- celery_beat.log.7.gz
+|   |-- celery_beat.log.8.gz
+|   |-- celery_beat.log.9.gz
+|   |-- celery.log
+|   |-- celery.log.1
+|   |-- celery.log.10.gz
+|   |-- celery.log.11.gz
+|   |-- celery.log.12.gz
+|   |-- celery.log.13.gz
+|   |-- celery.log.14.gz
+|   |-- celery.log.2.gz
+|   |-- celery.log.3.gz
+|   |-- celery.log.4.gz
+|   |-- celery.log.5.gz
+|   |-- celery.log.6.gz
+|   |-- celery.log.7.gz
+|   |-- celery.log.8.gz
+|   |-- celery.log.9.gz
+|   |-- gunicorn_access.log
+|   |-- gunicorn_access.log.1
+|   |-- gunicorn_access.log.10.gz
+|   |-- gunicorn_access.log.11.gz
+|   |-- gunicorn_access.log.12.gz
+|   |-- gunicorn_access.log.13.gz
+|   |-- gunicorn_access.log.14.gz
+|   |-- gunicorn_access.log.2.gz
+|   |-- gunicorn_access.log.3.gz
+|   |-- gunicorn_access.log.4.gz
+|   |-- gunicorn_access.log.5.gz
+|   |-- gunicorn_access.log.6.gz
+|   |-- gunicorn_access.log.7.gz
+|   |-- gunicorn_access.log.8.gz
+|   |-- gunicorn_access.log.9.gz
+|   |-- gunicorn_error.log
+|   |-- gunicorn_error.log.1
+|   |-- gunicorn_error.log.10.gz
+|   |-- gunicorn_error.log.11.gz
+|   |-- gunicorn_error.log.12.gz
+|   |-- gunicorn_error.log.2.gz
+|   |-- gunicorn_error.log.3.gz
+|   |-- gunicorn_error.log.4.gz
+|   |-- gunicorn_error.log.5.gz
+|   |-- gunicorn_error.log.6.gz
+|   |-- gunicorn_error.log.7.gz
+|   |-- gunicorn_error.log.8.gz
+|   |-- gunicorn_error.log.9.gz
+|   |-- gunicorn.pid
+|   |-- isp_bnas.log
+|   |-- isp_bnas.log.1
+|   |-- isp_bnas.log.10.gz
+|   |-- isp_bnas.log.11.gz
+|   |-- isp_bnas.log.12.gz
+|   |-- isp_bnas.log.13.gz
+|   |-- isp_bnas.log.14.gz
+|   |-- isp_bnas.log.2.gz
+|   |-- isp_bnas.log.3.gz
+|   |-- isp_bnas.log.4.gz
+|   |-- isp_bnas.log.5.gz
+|   |-- isp_bnas.log.6.gz
+|   |-- isp_bnas.log.7.gz
+|   |-- isp_bnas.log.8.gz
+|   |-- isp_bnas.log.9.gz
+|   |-- mysql_backup.log
+|   |-- mysql_backup.log.1
+|   |-- mysql_backup.log.10.gz
+|   |-- mysql_backup.log.11.gz
+|   |-- mysql_backup.log.12.gz
+|   |-- mysql_backup.log.2.gz
+|   |-- mysql_backup.log.3.gz
+|   |-- mysql_backup.log.4.gz
+|   |-- mysql_backup.log.5.gz
+|   |-- mysql_backup.log.6.gz
+|   |-- mysql_backup.log.7.gz
+|   |-- mysql_backup.log.8.gz
+|   |-- mysql_backup.log.9.gz
+|   |-- snmptrap.log
+|   |-- snmptrap.log.1
+|   |-- snmptrap.log.2.gz
+|   |-- snmptrap.log.3.gz
+|   |-- snmptrap.log.4.gz
+|   |-- snmptrap.log.5.gz
+|   |-- snmptrap.log.6.gz
+|   |-- snmptrap.log.7.gz
+|   `-- snmptrap.log.8.gz
+|-- manage.py
+|-- media
+|   |-- app
+|   |   |-- rajamehar-livetv.apk
+|   |   `-- rajamehar-online.apk
+|   |-- company
+|   |   `-- Rajamehar_Online_Logo.png
+|   `-- hls
+|       |-- action-hollywood
+|       |   `-- ffmpeg.log
+|       |-- al-jazeera
+|       |   `-- ffmpeg.log
+|       |-- atn-news
+|       |   `-- ffmpeg.log
+|       |-- bangla-vision
+|       |   `-- ffmpeg.log
+|       |-- bein-sports-1-serbia-fifa
+|       |   `-- ffmpeg.log
+|       |-- bein-sports-2-1
+|       |   `-- ffmpeg.log
+|       |-- bein-sports-2-serbia-fifa
+|       |   `-- ffmpeg.log
+|       |-- btv-3
+|       |   `-- ffmpeg.log
+|       |-- btv-national
+|       |   `-- ffmpeg.log
+|       |-- channel-24
+|       |   `-- ffmpeg.log
+|       |-- channel-9-2
+|       |   `-- ffmpeg.log
+|       |-- channel-i-hd
+|       |   `-- ffmpeg.log
+|       |-- channel-s-tv
+|       |   `-- ffmpeg.log
+|       |-- crime
+|       |   `-- ffmpeg.log
+|       |-- dbc-news
+|       |   `-- ffmpeg.log
+|       |-- deepto-tv-1
+|       |   `-- ffmpeg.log
+|       |-- dippto-tv
+|       |   `-- ffmpeg.log
+|       |-- ekattur
+|       |   `-- ffmpeg.log
+|       |-- ekushey-tv
+|       |   `-- ffmpeg.log
+|       |-- filmix-tv
+|       |   `-- ffmpeg.log
+|       |-- flash-guys-1
+|       |   `-- ffmpeg.log
+|       |-- g-series
+|       |   `-- ffmpeg.log
+|       |-- independent
+|       |   `-- ffmpeg.log
+|       |-- independent-tv
+|       |   `-- ffmpeg.log
+|       |-- jago-news-24-1
+|       |   `-- ffmpeg.log
+|       |-- jamuna-news
+|       |   `-- ffmpeg.log
+|       |-- kids-stars
+|       |   `-- ffmpeg.log
+|       |-- m6-sports
+|       |   `-- ffmpeg.log
+|       |-- maasranga-tv
+|       |   `-- ffmpeg.log
+|       |-- me-tv
+|       |   `-- ffmpeg.log
+|       |-- movie-bangla
+|       |   `-- ffmpeg.log
+|       |-- mr-bean-animated
+|       |   `-- ffmpeg.log
+|       |-- nba-one-hd
+|       |   `-- ffmpeg.log
+|       |-- news-21-hd
+|       |   `-- ffmpeg.log
+|       |-- news-24
+|       |   `-- ffmpeg.log
+|       |-- news-24-1
+|       |   `-- ffmpeg.log
+|       |-- ntv-3
+|       |   `-- ffmpeg.log
+|       |-- r-plus-gold
+|       |   `-- ffmpeg.log
+|       |-- r-plus-gould
+|       |   `-- ffmpeg.log
+|       |-- sangsad
+|       |   `-- ffmpeg.log
+|       |-- sa-tv-1
+|       |   `-- ffmpeg.log
+|       |-- screem-1
+|       |   `-- ffmpeg.log
+|       |-- sky-news
+|       |   `-- ffmpeg.log
+|       |-- smarty-1
+|       |   `-- ffmpeg.log
+|       |-- somoy-news
+|       |   `-- ffmpeg.log
+|       |-- somoy-tv-2
+|       |   `-- ffmpeg.log
+|       |-- somoy-tv-4
+|       |   `-- ffmpeg.log
+|       |-- srk-tv-1
+|       |   `-- ffmpeg.log
+|       |-- star-news-2
+|       |   `-- ffmpeg.log
+|       `-- yrf-music-hd
+|           `-- ffmpeg.log
+|-- MIGRATION_GUIDE.md
+|-- mikrotik_app
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_mikrotikserver_radius_configured_and_more.py
+|   |   |-- 0003_mikrotikserver_packages_m2m.py
+|   |   |-- 0004_remove_packages_m2m.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_mikrotikserver_radius_configured_and_more.cpython-314.pyc
+|   |       |-- 0003_mikrotikserver_packages_m2m.cpython-314.pyc
+|   |       |-- 0004_remove_packages_m2m.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   `-- tasks.cpython-314.pyc
+|   |-- services
+|   |   |-- __init__.py
+|   |   |-- mikrotik_service.py
+|   |   `-- __pycache__
+|   |       |-- __init__.cpython-314.pyc
+|   |       `-- mikrotik_service.cpython-314.pyc
+|   |-- tasks.py
+|   |-- tests.py
+|   `-- views.py
+|-- mobile_api
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- authentication.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_bkash_payment_session.py
+|   |   |-- 0003_bkash_session_purpose_package.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_bkash_payment_session.cpython-314.pyc
+|   |       |-- 0003_bkash_session_purpose_package.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- authentication.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- services
+|   |   |-- bkash_service.py
+|   |   |-- __init__.py
+|   |   |-- push_service.py
+|   |   `-- __pycache__
+|   |       |-- bkash_service.cpython-314.pyc
+|   |       |-- __init__.cpython-314.pyc
+|   |       `-- push_service.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- mobile_app
+|   |-- AGENTS.md
+|   |-- App.js
+|   |-- app.json
+|   |-- assets
+|   |   |-- android-icon-background.png
+|   |   |-- android-icon-foreground.png
+|   |   |-- android-icon-monochrome.png
+|   |   |-- bkash-bird.png
+|   |   |-- bkash-logo.png
+|   |   |-- favicon.png
+|   |   |-- icon.png
+|   |   |-- notification-icon.png
+|   |   `-- splash-icon.png
+|   |-- babel.config.js
+|   |-- build-1782992390685.apk
+|   |-- CLAUDE.md
+|   |-- dist
+|   |   |-- assetmap.json
+|   |   |-- assets
+|   |   |   |-- 02bc1fa7c0313217bde2d65ccbff40c9
+|   |   |   |-- 069d99eb1fa6712c0b9034a58c6b57dd
+|   |   |   |-- 0747a1317bbe9c6fc340b889ef8ab3ae
+|   |   |   |-- 0a328cd9c1afd0afe8e3b1ec5165b1b4
+|   |   |   |-- 0ea69b5077e7c4696db85dbcba75b0e1
+|   |   |   |-- 1190ab078c57159f4245a328118fcd9a
+|   |   |   |-- 286d67d3f74808a60a78d3ebf1a5fb57
+|   |   |   |-- 2d0a9133e39524f138be6d4db9f4851f
+|   |   |   |-- 35ba0eaec5a4f5ed12ca16fabeae451d
+|   |   |   |-- 3cd68ccdb8938e3711da2e8831b85493
+|   |   |   |-- 4382dfd200a0eceba8d39390cff614d5
+|   |   |   |-- 4403c6117ec30c859bc95d70ce4a71d3
+|   |   |   |-- 61ca7e64b7d605716c57706cef640b9a
+|   |   |   |-- 778ffc9fe8773a878e9c30a6304784de
+|   |   |   |-- 78c625386b4d0690b421eb0fc78f7b9c
+|   |   |   |-- 7d40544b395c5949f4646f5e150fe020
+|   |   |   |-- a132ecc4ba5c1517ff83c0fb321bc7fc
+|   |   |   |-- aff2c65b39a296d4f7e96d0f58169170
+|   |   |   |-- c3273c9e5321f20d1e42c2efae2578c4
+|   |   |   |-- c79c3606a1cf168006ad3979763c7e0c
+|   |   |   |-- d62ddc38b69aff346c20a28774933d6a
+|   |   |   |-- d84e297c3b3e49a614248143d53e40ca
+|   |   |   |-- d8e7601e3df962f83c62371ac14964d8
+|   |   |   |-- dad2fa9f4394a630f0f9a0d6dabd44bc
+|   |   |   `-- f3a81967828232c893d547162e922764
+|   |   |-- _expo
+|   |   |   `-- static
+|   |   |       `-- js
+|   |   `-- metadata.json
+|   |-- eas.json
+|   |-- GoogleService-Info.plist
+|   |-- google-services.json
+|   |-- index.js
+|   |-- LICENSE
+|   |-- package.json
+|   |-- package-lock.json
+|   |-- patches
+|   |   `-- react-native-callkeep+4.3.16.patch
+|   |-- plugins
+|   |   |-- withCallKeep.js
+|   |   |-- withFirebaseMessagingFix.js
+|   |   |-- withGradleMemory.js
+|   |   `-- withNotifeeForegroundType.js
+|   |-- public_apk
+|   |   |-- application-c2a4d692-13a6-4251-8bb5-dc6c3602679d.apk
+|   |   |-- application-f6b64062-d959-450c-a094-38851c4547d0.apk
+|   |   |-- build-1781811786200.apk
+|   |   |-- rajamehar-livetv.apk
+|   |   |-- rajamehar-livetv-v1.0.0-25.apk
+|   |   |-- rajamehar-livetv-v1.0.0-26.apk
+|   |   |-- rajamehar-livetv-v1.0.0-27.apk
+|   |   |-- rajamehar-livetv-v1.0.0-28.apk
+|   |   |-- rajamehar-livetv-v1.0.0-29.apk
+|   |   |-- rajamehar-livetv-v1.0.0.apk
+|   |   |-- rajamehar-livetv-v1.1.0.apk
+|   |   |-- rajamehar-online-v1.2.0.apk
+|   |   `-- README.md
+|   |-- scripts
+|   |   `-- generate_icons.py
+|   |-- src
+|   |   |-- components
+|   |   |   |-- BkashLogo.js
+|   |   |   |-- DueOverlay.js
+|   |   |   |-- MarqueeTicker.js
+|   |   |   |-- NoticeModal.js
+|   |   |   |-- ScreenHeader.js
+|   |   |   `-- StatusBadge.js
+|   |   |-- config.js
+|   |   |-- context
+|   |   |   |-- AuthContext.js
+|   |   |   `-- CallContext.js
+|   |   |-- screens
+|   |   |   |-- auth
+|   |   |   |   |-- ClientCodeScreen.js
+|   |   |   |   |-- LoginScreen.js
+|   |   |   |   `-- RegisterScreen.js
+|   |   |   |-- billing
+|   |   |   |   |-- BillListScreen.js
+|   |   |   |   |-- BkashWebViewScreen.js
+|   |   |   |   |-- InvoiceScreen.js
+|   |   |   |   |-- PackageScreen.js
+|   |   |   |   |-- PaymentResultScreen.js
+|   |   |   |   `-- RechargeScreen.js
+|   |   |   |-- call
+|   |   |   |   |-- CallScreen.js
+|   |   |   |   |-- DialPadScreen.js
+|   |   |   |   `-- SipStatusBadge.js
+|   |   |   |-- home
+|   |   |   |   |-- BannerDetailScreen.js
+|   |   |   |   |-- HomeScreen.js
+|   |   |   |   |-- LinksScreen.js
+|   |   |   |   |-- NotificationsScreen.js
+|   |   |   |   |-- TrafficScreen.js
+|   |   |   |   `-- WebViewScreen.js
+|   |   |   |-- pop
+|   |   |   |   `-- POPHomeScreen.js
+|   |   |   |-- profile
+|   |   |   |   `-- ProfileScreen.js
+|   |   |   |-- sms
+|   |   |   |   `-- SmsScreen.js
+|   |   |   |-- staff
+|   |   |   |   |-- AdminPanelScreen.js
+|   |   |   |   |-- StaffBillsScreen.js
+|   |   |   |   |-- StaffClientDetailScreen.js
+|   |   |   |   |-- StaffClientListScreen.js
+|   |   |   |   |-- StaffDashboardScreen.js
+|   |   |   |   |-- StaffHomeScreen.js
+|   |   |   |   |-- StaffHRScreen.js
+|   |   |   |   |-- StaffPendingPaymentsScreen.js
+|   |   |   |   |-- StaffPOPDetailScreen.js
+|   |   |   |   |-- StaffPOPListScreen.js
+|   |   |   |   |-- StaffReportScreen.js
+|   |   |   |   |-- StaffSupportListScreen.js
+|   |   |   |   `-- StaffTicketDetailScreen.js
+|   |   |   `-- support
+|   |   |       |-- AIChatScreen.js
+|   |   |       |-- SupportCreateScreen.js
+|   |   |       |-- SupportDetailScreen.js
+|   |   |       `-- SupportListScreen.js
+|   |   |-- services
+|   |   |   |-- api.js
+|   |   |   |-- backgroundService.js
+|   |   |   |-- callKeepService.js
+|   |   |   |-- foregroundService.js
+|   |   |   |-- messaging.js
+|   |   |   |-- notifications.js
+|   |   |   `-- sipPhone.js
+|   |   `-- utils
+|   |       `-- helpers.js
+|   `-- VOIP_README.md
+|-- network
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- management
+|   |   |-- commands
+|   |   |   |-- cleanup_links.py
+|   |   |   |-- __init__.py
+|   |   |   `-- __pycache__
+|   |   |       `-- cleanup_links.cpython-314.pyc
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       `-- __init__.cpython-314.pyc
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_networknode_networklink.py
+|   |   |-- 0003_networklink_port_fiber_details.py
+|   |   |-- 0004_networklink_fix_defaults.py
+|   |   |-- 0005_networknode_splitter_ratio.py
+|   |   |-- 0006_networknode_port_counts.py
+|   |   |-- 0007_networkpop_code_networkpop_mobile_and_more.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_networknode_networklink.cpython-314.pyc
+|   |       |-- 0003_networklink_port_fiber_details.cpython-314.pyc
+|   |       |-- 0004_networklink_fix_defaults.cpython-314.pyc
+|   |       |-- 0005_networknode_splitter_ratio.cpython-314.pyc
+|   |       |-- 0006_networknode_port_counts.cpython-314.pyc
+|   |       |-- 0007_networkpop_code_networkpop_mobile_and_more.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- nginx_config
+|   `-- isp_bnas.conf
+|-- olt_mgmt
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- management
+|   |   |-- commands
+|   |   |   |-- __init__.py
+|   |   |   |-- __pycache__
+|   |   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |   |-- snmp_discover.cpython-314.pyc
+|   |   |   |   `-- snmp_trap_listener.cpython-314.pyc
+|   |   |   |-- snmp_discover.py
+|   |   |   `-- snmp_trap_listener.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       `-- __init__.cpython-314.pyc
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_olt_telnet_fields_oltmaccache.py
+|   |   |-- 0003_onusignal.py
+|   |   |-- 0004_olt_fw_version_rx_snmp_oid.py
+|   |   |-- 0005_register_olt_auto_sync_periodic_task.py
+|   |   |-- 0006_snmptraplog.py
+|   |   |-- 0007_olt_tx_snmp_oid.py
+|   |   |-- 0008_oltmaccache_client_link_source.py
+|   |   |-- 0009_remove_onusignal_onu_remove_snmptraplog_onu_and_more.py
+|   |   |-- 0010_olt_system_name.py
+|   |   |-- 0011_oltmaccache_alive_time_and_more.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_olt_telnet_fields_oltmaccache.cpython-314.pyc
+|   |       |-- 0003_onusignal.cpython-314.pyc
+|   |       |-- 0004_olt_fw_version_rx_snmp_oid.cpython-314.pyc
+|   |       |-- 0005_register_olt_auto_sync_periodic_task.cpython-314.pyc
+|   |       |-- 0006_snmptraplog.cpython-314.pyc
+|   |       |-- 0007_olt_tx_snmp_oid.cpython-314.pyc
+|   |       |-- 0008_oltmaccache_client_link_source.cpython-314.pyc
+|   |       |-- 0009_remove_onusignal_onu_remove_snmptraplog_onu_and_more.cpython-314.pyc
+|   |       |-- 0010_olt_system_name.cpython-314.pyc
+|   |       |-- 0011_oltmaccache_alive_time_and_more.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   |-- signals.cpython-314.pyc
+|   |   `-- tasks.cpython-314.pyc
+|   |-- services
+|   |   |-- cli_service.py
+|   |   |-- device_service.py
+|   |   |-- http_service.py
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- cli_service.cpython-314.pyc
+|   |   |   |-- device_service.cpython-314.pyc
+|   |   |   |-- http_service.cpython-314.pyc
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- snmp_service.cpython-314.pyc
+|   |   |   |-- telnet_service.cpython-314.pyc
+|   |   |   `-- trap_service.cpython-314.pyc
+|   |   |-- snmp_service.py
+|   |   `-- trap_service.py
+|   |-- signals.py
+|   |-- tasks.py
+|   |-- tests.py
+|   `-- views.py
+|-- pop
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_add_pop_package_tariff_main_models.py
+|   |   |-- 0003_extended_pop_models.py
+|   |   |-- 0004_rename_isp_pgw_pop_idx_isp_pgw_pay_pop_id_0cba6d_idx_and_more.py
+|   |   |-- 0005_clientrechargelog_popchangelog_popfundstartlog.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_add_pop_package_tariff_main_models.cpython-314.pyc
+|   |       |-- 0003_extended_pop_models.cpython-314.pyc
+|   |       |-- 0003_pop_funding_pgw_settlement_notice_v2.cpython-314.pyc
+|   |       |-- 0004_rename_isp_pgw_pop_idx_isp_pgw_pay_pop_id_0cba6d_idx_and_more.cpython-314.pyc
+|   |       |-- 0005_clientrechargelog_popchangelog_popfundstartlog.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- project_structure.txt
+|-- purchase
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_provider_providerbill_providerbillline_and_more.py
+|   |   |-- 0003_providerbill_discount_amount.py
+|   |   |-- 0004_vendor_upgrade_requisition_items_order_bill.py
+|   |   |-- 0005_remove_providerbillline_item_fk.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_provider_providerbill_providerbillline_and_more.cpython-314.pyc
+|   |       |-- 0003_providerbill_discount_amount.cpython-314.pyc
+|   |       |-- 0004_vendor_upgrade_requisition_items_order_bill.cpython-314.pyc
+|   |       |-- 0005_remove_providerbillline_item_fk.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- radius_app
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- management
+|   |   |-- commands
+|   |   |   |-- __init__.py
+|   |   |   `-- radius_maintenance.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       `-- __init__.cpython-314.pyc
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_radiusserver.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_radiusserver.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- services
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   `-- radius_service.cpython-314.pyc
+|   |   `-- radius_service.py
+|   |-- tests.py
+|   `-- views.py
+|-- README_USAGE.md
+|-- reports
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   `-- models.cpython-314.pyc
+|   |-- tests.py
+|   `-- views.py
+|-- requirements.txt
+|-- role_permissions
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_userroleassignment_enc_password.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_userroleassignment_enc_password.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- module_definitions.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   |-- module_definitions.cpython-314.pyc
+|   |   `-- utils.cpython-314.pyc
+|   |-- tests.py
+|   |-- utils.py
+|   `-- views.py
+|-- sales
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   |-- utils.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   |-- utils.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   `-- __pycache__
+|       |-- admin.cpython-314.pyc
+|       |-- apps.cpython-314.pyc
+|       |-- __init__.cpython-314.pyc
+|       `-- models.cpython-314.pyc
+|-- scripts
+|   |-- build_and_publish_apk.sh
+|   |-- build_and_publish_livetv_apk.sh
+|   |-- fix_clients_conf.py
+|   |-- fix_freeradius_config.sh
+|   |-- fix_sql_pool.py
+|   |-- point_app_download_to_media.sh
+|   |-- test_bkash_webhook.sh
+|   |-- update_apk_download.sh
+|   |-- update_livetv_apk_download.sh
+|   `-- update_livetv_apk.sh
+|-- SCRIPTS_GUIDE.md
+|-- setup_https.sh
+|-- sms_service
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_smsgateway_config_smsgateway_is_default_and_more.py
+|   |   |-- 0003_alter_smstemplate_options_smstemplate_template_type_and_more.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_smsgateway_config_smsgateway_is_default_and_more.cpython-314.pyc
+|   |       |-- 0003_alter_smstemplate_options_smstemplate_template_type_and_more.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   `-- services.cpython-314.pyc
+|   |-- services.py
+|   |-- tests.py
+|   `-- views.py
+|-- sonar-project.properties
+|-- STAFF_APP_PLAN.md
+|-- staticfiles
+|   |-- admin
+|   |   |-- css
+|   |   |   |-- autocomplete.css
+|   |   |   |-- base.css
+|   |   |   |-- changelists.css
+|   |   |   |-- dark_mode.css
+|   |   |   |-- dashboard.css
+|   |   |   |-- forms.css
+|   |   |   |-- login.css
+|   |   |   |-- nav_sidebar.css
+|   |   |   |-- responsive.css
+|   |   |   |-- responsive_rtl.css
+|   |   |   |-- rtl.css
+|   |   |   |-- unusable_password_field.css
+|   |   |   |-- vendor
+|   |   |   |   `-- select2
+|   |   |   `-- widgets.css
+|   |   |-- img
+|   |   |   |-- calendar-icons.svg
+|   |   |   |-- icon-addlink.svg
+|   |   |   |-- icon-alert-dark.svg
+|   |   |   |-- icon-alert.svg
+|   |   |   |-- icon-calendar.svg
+|   |   |   |-- icon-changelink.svg
+|   |   |   |-- icon-clock.svg
+|   |   |   |-- icon-debug-dark.svg
+|   |   |   |-- icon-debug.svg
+|   |   |   |-- icon-deletelink.svg
+|   |   |   |-- icon-hidelink.svg
+|   |   |   |-- icon-info-dark.svg
+|   |   |   |-- icon-info.svg
+|   |   |   |-- icon-no-dark.svg
+|   |   |   |-- icon-no.svg
+|   |   |   |-- icon-unknown-alt.svg
+|   |   |   |-- icon-unknown.svg
+|   |   |   |-- icon-viewlink.svg
+|   |   |   |-- icon-yes-dark.svg
+|   |   |   |-- icon-yes.svg
+|   |   |   |-- inline-delete.svg
+|   |   |   |-- README.md
+|   |   |   |-- search.svg
+|   |   |   |-- selector-icons.svg
+|   |   |   |-- sorting-icons.svg
+|   |   |   |-- tooltag-add.svg
+|   |   |   `-- tooltag-arrowright.svg
+|   |   `-- js
+|   |       |-- actions.js
+|   |       |-- admin
+|   |       |   |-- DateTimeShortcuts.js
+|   |       |   `-- RelatedObjectLookups.js
+|   |       |-- autocomplete.js
+|   |       |-- calendar.js
+|   |       |-- cancel.js
+|   |       |-- change_form.js
+|   |       |-- core.js
+|   |       |-- filters.js
+|   |       |-- inlines.js
+|   |       |-- jquery.init.js
+|   |       |-- nav_sidebar.js
+|   |       |-- popup_response.js
+|   |       |-- prepopulate_init.js
+|   |       |-- prepopulate.js
+|   |       |-- SelectBox.js
+|   |       |-- SelectFilter2.js
+|   |       |-- theme.js
+|   |       |-- urlify.js
+|   |       `-- vendor
+|   |           |-- jquery
+|   |           |-- select2
+|   |           `-- xregexp
+|   `-- rest_framework
+|       |-- css
+|       |   |-- bootstrap.min.css
+|       |   |-- bootstrap.min.css.map
+|       |   |-- bootstrap-theme.min.css
+|       |   |-- bootstrap-theme.min.css.map
+|       |   |-- bootstrap-tweaks.css
+|       |   |-- default.css
+|       |   |-- font-awesome-4.0.3.css
+|       |   `-- prettify.css
+|       |-- fonts
+|       |   |-- fontawesome-webfont.eot
+|       |   |-- fontawesome-webfont.svg
+|       |   |-- fontawesome-webfont.ttf
+|       |   |-- fontawesome-webfont.woff
+|       |   |-- glyphicons-halflings-regular.eot
+|       |   |-- glyphicons-halflings-regular.svg
+|       |   |-- glyphicons-halflings-regular.ttf
+|       |   |-- glyphicons-halflings-regular.woff
+|       |   `-- glyphicons-halflings-regular.woff2
+|       |-- img
+|       |   |-- glyphicons-halflings.png
+|       |   |-- glyphicons-halflings-white.png
+|       |   `-- grid.png
+|       `-- js
+|           |-- ajax-form.js
+|           |-- bootstrap.min.js
+|           |-- csrf.js
+|           |-- default.js
+|           |-- jquery-3.7.1.min.js
+|           |-- load-ajax-form.js
+|           `-- prettify-min.js
+|-- support
+|   |-- admin.py
+|   |-- ai_service.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_alter_supportcategory_options_and_more.py
+|   |   |-- 0003_alter_staffnotification_notif_type.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_alter_supportcategory_options_and_more.cpython-314.pyc
+|   |       |-- 0003_alter_staffnotification_notif_type.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- ai_service.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   |-- signals.cpython-314.pyc
+|   |   `-- tasks.cpython-314.pyc
+|   |-- signals.py
+|   |-- tasks.py
+|   |-- tests.py
+|   `-- views.py
+|-- system_settings
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- management
+|   |   |-- commands
+|   |   |   |-- __init__.py
+|   |   |   |-- __pycache__
+|   |   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |   `-- reset_test_data.cpython-314.pyc
+|   |   |   `-- reset_test_data.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       `-- __init__.cpython-314.pyc
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_invoicesetup_add_fields.py
+|   |   |-- 0003_companysetup_customer_id_format.py
+|   |   |-- 0004_companysetup_customer_id_editable.py
+|   |   |-- 0005_companysetup_customer_id_start_number.py
+|   |   |-- 0006_paymentgatewayconfig_full_fields.py
+|   |   |-- 0007_paymentgatewayconfig_appkey_sandbox.py
+|   |   |-- 0008_mobile_app_models.py
+|   |   |-- 0009_mobile_ftp_livetv.py
+|   |   |-- 0010_ftp_servers_multi.py
+|   |   |-- 0011_mobile_ticker_notice.py
+|   |   |-- 0012_ticker_expires_at.py
+|   |   |-- 0013_alter_automaticprocess_process_type.py
+|   |   |-- 0014_add_voip_schedule_mikrotik_sync_process_types.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_invoicesetup_add_fields.cpython-314.pyc
+|   |       |-- 0003_companysetup_customer_id_format.cpython-314.pyc
+|   |       |-- 0004_companysetup_customer_id_editable.cpython-314.pyc
+|   |       |-- 0005_companysetup_customer_id_start_number.cpython-314.pyc
+|   |       |-- 0006_paymentgatewayconfig_full_fields.cpython-314.pyc
+|   |       |-- 0007_paymentgatewayconfig_appkey_sandbox.cpython-314.pyc
+|   |       |-- 0008_mobile_app_models.cpython-314.pyc
+|   |       |-- 0009_mobile_ftp_livetv.cpython-314.pyc
+|   |       |-- 0010_ftp_servers_multi.cpython-314.pyc
+|   |       |-- 0011_mobile_ticker_notice.cpython-314.pyc
+|   |       |-- 0012_ticker_expires_at.cpython-314.pyc
+|   |       |-- 0013_alter_automaticprocess_process_type.cpython-314.pyc
+|   |       |-- 0014_add_voip_schedule_mikrotik_sync_process_types.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   `-- tasks.cpython-314.pyc
+|   |-- tasks.py
+|   |-- tests.py
+|   `-- views.py
+|-- tasks_mgmt
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_task_deadline_task_notification_sent_and_more.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_task_deadline_task_notification_sent_and_more.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   `-- signals.cpython-314.pyc
+|   |-- signals.py
+|   |-- tests.py
+|   `-- views.py
+|-- templates
+|   `-- walled_garden
+|       |-- expired.html
+|       |-- Nginx_wiring.txt
+|       |-- payment_allow_refresh.rsc
+|       |-- payment_permanent.rsc
+|       `-- RouterOS_Script.txt
+|-- user
+|   |-- admin.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- migrations
+|   |   `-- __init__.py
+|   |-- models.py
+|   |-- tests.py
+|   `-- views.py
+|-- user_portal
+|   |-- dist
+|   |   |-- assets
+|   |   |   |-- index-BTljWNnh.js
+|   |   |   `-- index-CUcGc5s_.css
+|   |   |-- favicon.svg
+|   |   |-- icons.svg
+|   |   `-- index.html
+|   |-- eslint.config.js
+|   |-- index.html
+|   |-- package.json
+|   |-- package-lock.json
+|   |-- postcss.config.js
+|   |-- public
+|   |   |-- favicon.svg
+|   |   `-- icons.svg
+|   |-- README.md
+|   |-- src
+|   |   |-- App.css
+|   |   |-- App.jsx
+|   |   |-- assets
+|   |   |   |-- hero.png
+|   |   |   |-- react.svg
+|   |   |   `-- vite.svg
+|   |   |-- index.css
+|   |   |-- main.jsx
+|   |   |-- pages
+|   |   |   |-- Home.jsx
+|   |   |   `-- Login.jsx
+|   |   `-- utils
+|   |       `-- api.js
+|   |-- tailwind.config.js
+|   `-- vite.config.js
+|-- venv
+|   |-- bin
+|   |   |-- activate
+|   |   |-- activate.csh
+|   |   |-- activate.fish
+|   |   |-- Activate.ps1
+|   |   |-- celery
+|   |   |-- distro
+|   |   |-- django-admin
+|   |   |-- doesitcache
+|   |   |-- gunicorn
+|   |   |-- gunicornc
+|   |   |-- httpx
+|   |   |-- inv
+|   |   |-- invoke
+|   |   |-- normalizer
+|   |   |-- pip
+|   |   |-- pip3
+|   |   |-- pip3.14
+|   |   |-- python -> python3
+|   |   |-- python3 -> /usr/bin/python3
+|   |   |-- python3.14 -> python3
+|   |   |-- sqlformat
+|   |   |-- websockets
+|   |   `-- 𝜋thon -> python3
+|   |-- include
+|   |-- lib
+|   |   `-- python3.14
+|   |       `-- site-packages
+|   |           |-- 81d243bd2c585b0f4821__mypyc.cpython-314-x86_64-linux-gnu.so
+|   |           |-- amqp
+|   |           |-- amqp-5.3.1.dist-info
+|   |           |-- annotated_types
+|   |           |-- annotated_types-0.7.0.dist-info
+|   |           |-- anyio
+|   |           |-- anyio-4.13.0.dist-info
+|   |           |-- asgiref
+|   |           |-- asgiref-3.11.1.dist-info
+|   |           |-- bcrypt
+|   |           |-- bcrypt-5.0.0.dist-info
+|   |           |-- billiard
+|   |           |-- billiard-4.2.4.dist-info
+|   |           |-- cachecontrol
+|   |           |-- cachecontrol-0.14.4.dist-info
+|   |           |-- celery
+|   |           |-- celery-5.6.3.dist-info
+|   |           |-- certifi
+|   |           |-- certifi-2026.4.22.dist-info
+|   |           |-- cffi
+|   |           |-- cffi-2.0.0.dist-info
+|   |           |-- _cffi_backend.cpython-314-x86_64-linux-gnu.so
+|   |           |-- charset_normalizer
+|   |           |-- charset_normalizer-3.4.7.dist-info
+|   |           |-- click
+|   |           |-- click-8.3.3.dist-info
+|   |           |-- click_didyoumean
+|   |           |-- click_didyoumean-0.3.1.dist-info
+|   |           |-- click_plugins
+|   |           |-- click_plugins-1.1.1.2.dist-info
+|   |           |-- click_plugins.py
+|   |           |-- click_repl
+|   |           |-- click_repl-0.3.0.dist-info
+|   |           |-- corsheaders
+|   |           |-- cron_descriptor
+|   |           |-- cron_descriptor-1.4.5.dist-info
+|   |           |-- cronlog.py
+|   |           |-- crontab.py
+|   |           |-- crontabs.py
+|   |           |-- cryptography
+|   |           |-- cryptography-48.0.0.dist-info
+|   |           |-- dateutil
+|   |           |-- distro
+|   |           |-- distro-1.9.0.dist-info
+|   |           |-- django
+|   |           |-- django-6.0.5.dist-info
+|   |           |-- django_celery_beat
+|   |           |-- django_celery_beat-2.9.0.dist-info
+|   |           |-- django_celery_results
+|   |           |-- django_celery_results-2.6.0.dist-info
+|   |           |-- django_cors_headers-4.9.0.dist-info
+|   |           |-- django_environ-0.13.0.dist-info
+|   |           |-- django_filter-25.2.dist-info
+|   |           |-- django_filters
+|   |           |-- djangorestframework-3.17.1.dist-info
+|   |           |-- djangorestframework_simplejwt-5.5.1.dist-info
+|   |           |-- django_timezone_field-7.2.1.dist-info
+|   |           |-- environ
+|   |           |-- firebase_admin
+|   |           |-- firebase_admin-7.4.0.dist-info
+|   |           |-- google
+|   |           |-- google_api_core-2.31.0.dist-info
+|   |           |-- googleapis_common_protos-1.75.0.dist-info
+|   |           |-- google_auth-2.53.0.dist-info
+|   |           |-- google_cloud_core-2.6.0.dist-info
+|   |           |-- google_cloud_firestore-2.27.0.dist-info
+|   |           |-- google_cloud_storage-3.11.0.dist-info
+|   |           |-- google_crc32c
+|   |           |-- google_crc32c-1.8.0.dist-info
+|   |           |-- google_crc32c.libs
+|   |           |-- google_genai-2.12.1.dist-info
+|   |           |-- google_resumable_media-2.10.0.dist-info
+|   |           |-- grpc
+|   |           |-- grpcio-1.81.0.dist-info
+|   |           |-- grpcio_status-1.81.0.dist-info
+|   |           |-- grpc_status
+|   |           |-- gunicorn
+|   |           |-- gunicorn-26.0.0.dist-info
+|   |           |-- h11
+|   |           |-- h11-0.16.0.dist-info
+|   |           |-- h2
+|   |           |-- h2-4.3.0.dist-info
+|   |           |-- hpack
+|   |           |-- hpack-4.1.0.dist-info
+|   |           |-- httpcore
+|   |           |-- httpcore-1.0.9.dist-info
+|   |           |-- httpx
+|   |           |-- httpx-0.28.1.dist-info
+|   |           |-- hyperframe
+|   |           |-- hyperframe-6.1.0.dist-info
+|   |           |-- idna
+|   |           |-- idna-3.14.dist-info
+|   |           |-- invoke
+|   |           |-- invoke-3.0.3.dist-info
+|   |           |-- jwt
+|   |           |-- kombu
+|   |           |-- kombu-5.6.2.dist-info
+|   |           |-- msgpack
+|   |           |-- msgpack-1.1.2.dist-info
+|   |           |-- mysqlclient-2.2.8.dist-info
+|   |           |-- MySQLdb
+|   |           |-- nacl
+|   |           |-- packaging
+|   |           |-- packaging-26.2.dist-info
+|   |           |-- paramiko
+|   |           |-- paramiko-5.0.0.dist-info
+|   |           |-- PIL
+|   |           |-- pillow-12.2.0.dist-info
+|   |           |-- pillow.libs
+|   |           |-- pip
+|   |           |-- pip-26.1.2.dist-info
+|   |           |-- prompt_toolkit
+|   |           |-- prompt_toolkit-3.0.52.dist-info
+|   |           |-- proto
+|   |           |-- protobuf-7.35.0.dist-info
+|   |           |-- proto_plus-1.28.0.dist-info
+|   |           |-- pyasn1
+|   |           |-- pyasn1-0.6.3.dist-info
+|   |           |-- pyasn1_modules
+|   |           |-- pyasn1_modules-0.4.2.dist-info
+|   |           |-- __pycache__
+|   |           |-- pycparser
+|   |           |-- pycparser-3.0.dist-info
+|   |           |-- pydantic
+|   |           |-- pydantic-2.13.4.dist-info
+|   |           |-- pydantic_core
+|   |           |-- pydantic_core-2.46.4.dist-info
+|   |           |-- pyjwt-2.12.1.dist-info
+|   |           |-- pymysql
+|   |           |-- pymysql-1.1.3.dist-info
+|   |           |-- pynacl-1.6.2.dist-info
+|   |           |-- pysnmp
+|   |           |-- pysnmp-7.1.26.dist-info
+|   |           |-- python_crontab-3.3.0.dist-info
+|   |           |-- python_dateutil-2.9.0.post0.dist-info
+|   |           |-- redis
+|   |           |-- redis-7.4.0.dist-info
+|   |           |-- requests
+|   |           |-- requests-2.34.0.dist-info
+|   |           |-- rest_framework
+|   |           |-- rest_framework_simplejwt
+|   |           |-- routeros_api
+|   |           |-- routeros_api-0.21.0.dist-info
+|   |           |-- six-1.17.0.dist-info
+|   |           |-- six.py
+|   |           |-- sniffio
+|   |           |-- sniffio-1.3.1.dist-info
+|   |           |-- sqlparse
+|   |           |-- sqlparse-0.5.5.dist-info
+|   |           |-- tenacity
+|   |           |-- tenacity-9.1.4.dist-info
+|   |           |-- tests
+|   |           |-- timezone_field
+|   |           |-- typing_extensions-4.15.0.dist-info
+|   |           |-- typing_extensions.py
+|   |           |-- typing_inspection
+|   |           |-- typing_inspection-0.4.2.dist-info
+|   |           |-- tzdata
+|   |           |-- tzdata-2026.2.dist-info
+|   |           |-- tzlocal
+|   |           |-- tzlocal-5.3.1.dist-info
+|   |           |-- urllib3
+|   |           |-- urllib3-2.7.0.dist-info
+|   |           |-- vine
+|   |           |-- vine-5.1.0.dist-info
+|   |           |-- wcwidth
+|   |           |-- wcwidth-0.7.0.dist-info
+|   |           |-- websockets
+|   |           `-- websockets-16.1.1.dist-info
+|   |-- lib64 -> lib
+|   `-- pyvenv.cfg
+|-- voip
+|   |-- admin.py
+|   |-- api
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- serializers.cpython-314.pyc
+|   |   |   |-- urls.cpython-314.pyc
+|   |   |   `-- views.cpython-314.pyc
+|   |   |-- serializers.py
+|   |   |-- urls.py
+|   |   `-- views.py
+|   |-- apps.py
+|   |-- __init__.py
+|   |-- management
+|   |   |-- commands
+|   |   |   |-- __init__.py
+|   |   |   |-- __pycache__
+|   |   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |   |-- voip_call_listener.cpython-314.pyc
+|   |   |   |   `-- voip_provision_all.cpython-314.pyc
+|   |   |   |-- voip_call_listener.py
+|   |   |   `-- voip_provision_all.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       `-- __init__.cpython-314.pyc
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- 0002_voicecallschedule.py
+|   |   |-- 0003_voicecallschedule_run_time.py
+|   |   |-- 0004_pbx_hotline_models.py
+|   |   |-- 0005_alter_voicecallschedule_audio_voicerecording_and_more.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-314.pyc
+|   |       |-- 0002_voicecallschedule.cpython-314.pyc
+|   |       |-- 0003_voicecallschedule_run_time.cpython-314.pyc
+|   |       |-- 0004_pbx_hotline_models.cpython-314.pyc
+|   |       |-- 0005_alter_voicecallschedule_audio_voicerecording_and_more.cpython-314.pyc
+|   |       `-- __init__.cpython-314.pyc
+|   |-- models.py
+|   |-- __pycache__
+|   |   |-- admin.cpython-314.pyc
+|   |   |-- apps.cpython-314.pyc
+|   |   |-- __init__.cpython-314.pyc
+|   |   |-- models.cpython-314.pyc
+|   |   `-- signals.cpython-314.pyc
+|   |-- services
+|   |   |-- ari_client.py
+|   |   |-- asterisk_provision.py
+|   |   |-- __init__.py
+|   |   |-- pbx_provision.py
+|   |   |-- __pycache__
+|   |   |   |-- ari_client.cpython-314.pyc
+|   |   |   |-- asterisk_provision.cpython-314.pyc
+|   |   |   |-- __init__.cpython-314.pyc
+|   |   |   |-- pbx_provision.cpython-314.pyc
+|   |   |   `-- voice_broadcast.cpython-314.pyc
+|   |   `-- voice_broadcast.py
+|   |-- signals.py
+|   `-- tasks.py
+`-- VOIP_PLAN.md
+
+539 directories, 1625 files

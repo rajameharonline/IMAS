@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Environment variables — .env.example track হবে (template), .env হবে না (credentials)
+.env
+.env.local
+.env.production
+.env.sonarqube
+.env.docker
+secrets.py
+
+# .env ব্যাকআপ ফাইল (rotate_redis_password.sh, setup_host_networking.sh ইত্যাদি স্ক্রিপ্ট
+# তৈরি করে) — এগুলোতেও আসল credentials থাকে, কখনো commit নয়
+.env*.bak*
+*.bak.rotate.*
+
+# MCP config — SonarQube/Postman token plaintext থাকে, কখনো commit নয়
+.mcp.json
+
+# Node / React
+admin_panel/node_modules/
+admin_panel/dist/
+admin_panel/.env
+admin_panel/.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Coverage
+.coverage
+htmlcov/
+
+# pytest
+.pytest_cache/
+
+# Migrations (keep structure, ignore data)
+# Uncomment if you want to ignore migrations:
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Firebase Admin service account key (SECRET — never commit)
+firebase-service-account.json
+mobile_app/public_apk/
+mobile_app/*.apk
+logs/*.pid
+logs/

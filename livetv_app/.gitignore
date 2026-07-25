@@ -1,0 +1,14 @@
+node_modules/
+android/build/
+android/.gradle/
+android/app/build/
+android/app/.cxx/
+.expo/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+google-services.json

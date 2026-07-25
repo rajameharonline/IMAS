@@ -1,0 +1,10 @@
+# EAS build-এ আপলোড থেকে বাদ — build-এ অপ্রয়োজনীয় বড় ফাইল (আপলোড দ্রুত করে)।
+# public_apk/-এ তৈরি APK রাখা হয় (১০০MB+) — build-এ লাগে না।
+public_apk/
+*.apk
+*.aab
+
+# build/dev artifacts
+dist/
+.expo/
+*.log

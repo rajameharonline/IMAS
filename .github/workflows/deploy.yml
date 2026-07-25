@@ -1,0 +1,14 @@
+name: Deploy (Docker stack)
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    name: Deploy to ISP-LAB
+    runs-on: self-hosted
+    steps:
+      - name: Run docker/deploy.sh on the server
+        run: bash /var/www/isp_bnas/docker/deploy.sh

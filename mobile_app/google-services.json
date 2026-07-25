@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "625422101481",
+    "project_id": "rajameha-online",
+    "storage_bucket": "rajameha-online.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625422101481:android:ebb1324ac69b1ec2f23978",
+        "android_client_info": {
+          "package_name": "com.rajameharonline.client"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4BLMZMVuO6XI99p-RdSHrC0odfBmi6lM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f2d42">
+    <title>সংযোগের মেয়াদ শেষ — বিল পরিশোধ করুন</title>
+    <style>
+        :root { --brand: #DC5014; --brand-dark: #b8400f; --ink: #0f172a; --muted: #64748b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Hind Siliguri', 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: radial-gradient(1000px 500px at 50% -8%, #1e4a66 0%, #0f2d42 55%, #0a2030 100%);
+            min-height: 100dvh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 10px; color: var(--ink);
+        }
+        .card {
+            background: #fff; width: 100%; max-width: 410px; max-height: 96dvh;
+            border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,.35);
+            animation: rise .4s cubic-bezier(.2,.8,.2,1);
+        }
+        @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+        @keyframes pulse { 0%,100% { box-shadow: 0 0 0 6px #fff1ed; } 50% { box-shadow: 0 0 0 11px #fde3da; } }
+
+        /* Header — logo */
+        .head {
+            background: linear-gradient(135deg, #f7fafc, #eef4f8);
+            padding: 14px 18px; text-align: center; border-bottom: 1px solid #e8eef3;
+        }
+        .head img { max-height: 46px; max-width: 78%; object-fit: contain; }
+        .head .name { font-size: 17px; font-weight: 800; color: var(--brand); }
+
+        /* Body */
+        .body { padding: 14px 20px 18px; text-align: center; overflow-y: auto; }
+        .icon {
+            width: 58px; height: 58px; margin: 2px auto 8px; border-radius: 50%;
+            background: #fff1ed; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; animation: pulse 2.2s ease-in-out infinite;
+        }
+        h1 { font-size: clamp(19px, 5.5vw, 22px); font-weight: 800; color: #b91c1c; }
+        .msg { font-size: 13.5px; line-height: 1.6; color: #475569; margin: 6px 0 14px; }
+        .msg b { color: var(--brand); }
+
+        /* Steps — compact */
+        .steps { margin: 0 0 14px; }
+        .steps .t { font-size: 13px; font-weight: 800; color: var(--brand); text-align: right; margin-bottom: 7px; }
+        .step {
+            display: flex; flex-direction: row-reverse; align-items: center; gap: 9px;
+            text-align: right; padding: 5px 0; font-size: 13px; line-height: 1.45; color: #334155;
+        }
+        .num {
+            flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%;
+            background: var(--brand); color: #fff; font-weight: 800; font-size: 12px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .step b { color: var(--brand); }
+
+        /* Button */
+        .btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            text-decoration: none; font-weight: 800; padding: 15px; border-radius: 13px;
+            font-size: 16px; transition: transform .08s ease;
+        }
+        .btn:active { transform: scale(.98); }
+        /* সাদা টেক্সট AA contrast (≥4.5:1) পেতে সবুজ কিছুটা গাঢ় (S7924) */
+        .btn-app { background: linear-gradient(135deg, #15803d, #166534); color: #fff;
+                   box-shadow: 0 8px 18px rgba(22,163,74,.3); }
+        .btn-portal { background: #f1f5f9; color: #334155; font-weight: 700; font-size: 14px; padding: 11px; margin-top: 9px; }
+        .hint { font-size: 11.5px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+        .hint b { color: var(--brand); }
+
+        /* Hotline */
+        .hotline { margin-top: 12px; padding: 10px; border-radius: 12px; background: #f8fafc; border: 1px solid #eef2f7; }
+        .hotline span { font-size: 12px; color: var(--muted); }
+        .hotline a { display: inline-flex; align-items: center; gap: 5px; color: var(--brand);
+                     font-weight: 800; text-decoration: none; font-size: 18px; }
+        .foot { margin-top: 10px; font-size: 10.5px; color: #94a3b8; }
+
+        /* App installed/not — note */
+        .note { margin-top: 9px; padding: 9px 11px; border-radius: 11px; background: #f0fdf4;
+                border: 1px solid #bbf7d0; font-size: 11.5px; line-height: 1.55; color: #166534; text-align: right; }
+        .note b { color: #15803d; }
+
+        /* bKash direct-payment guide (অ্যাপ ছাড়া) */
+        details.bk { margin-top: 13px; border-radius: 13px; border: 1px solid #f9c6dd; overflow: hidden; }
+        details.bk > summary {
+            list-style: none; cursor: pointer; padding: 12px 14px; font-size: 13.5px; font-weight: 800;
+            color: #fff; background: linear-gradient(135deg, #e2136e, #b30e58);
+            display: flex; align-items: center; justify-content: center; gap: 7px;
+        }
+        details.bk > summary::-webkit-details-marker { display: none; }
+        .bk-body { padding: 12px 12px 14px; background: #fff5fa; }
+        .bk-merchant { background: #fff; border: 1.5px dashed #e2136e; border-radius: 11px;
+                       padding: 9px 11px; margin-bottom: 11px; text-align: center; }
+        .bk-merchant .mname { font-size: 12px; font-weight: 700; color: #475569; }
+        .bk-merchant .mno { font-size: 19px; font-weight: 800; color: #e2136e; letter-spacing: .5px; }
+        .bk-merchant .mamt { font-size: 12px; color: #475569; margin-top: 2px; }
+        .bk-merchant .mamt b { color: #e2136e; font-size: 14px; }
+        .bk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .bk-card { position: relative; border: 1.5px solid #e2136e; border-radius: 11px;
+                   padding: 8px 9px 5px; background: #fff; display: flex; flex-direction: column; min-height: 70px; }
+        .bk-num { position: absolute; top: -8px; right: 8px; width: 19px; height: 19px; border-radius: 50%;
+                  background: #e2136e; color: #fff; font-size: 10.5px; font-weight: 800;
+                  display: flex; align-items: center; justify-content: center; }
+        .bk-scr { flex: 1; font-size: 11px; color: #0f172a; line-height: 1.4; text-align: left; }
+        .bk-scr .big { font-size: 15px; font-weight: 800; color: #e2136e; }
+        .bk-scr .hl { background: #e2136e; color: #fff; padding: 1px 5px; border-radius: 4px; font-weight: 700; }
+        .bk-bar { display: flex; justify-content: space-between; font-size: 8.5px; color: #b6becb;
+                  border-top: 1px solid #f1f5f9; margin-top: 5px; padding-top: 3px; }
+        .bk-cap { font-size: 10.5px; color: #475569; text-align: center; margin-top: 5px; line-height: 1.4; }
+        .bk-cap b { color: #e2136e; }
+        .bk-sec { display: flex; align-items: center; gap: 7px; margin: 14px 0 9px; }
+        .bk-sec::before, .bk-sec::after { content: ""; flex: 1; height: 1px; background: #f3c6da; }
+        .bk-sec span { font-size: 12px; font-weight: 800; color: #e2136e; white-space: nowrap; }
+        .bk-sec.first { margin-top: 4px; }
+        /* App-flow card — হালকা ভিন্ন রঙ যাতে USSD থেকে আলাদা বোঝা যায় */
+        .bk-card.app { border-color: #f0a8c8; background: #fffafc; }
+        .bk-card.app .bk-num { background: #b30e58; }
+        /* আসল মোবাইল-স্ক্রিন গাইড ছবি (base64 inline) — ২-কলাম grid (poster স্টাইল) */
+        .bk-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+        .bk-img { width: 100%; border-radius: 10px; display: block; border: 1px solid #f3c6da;
+                  background: #fff; }
+
+        /* খুব ছোট স্ক্রিনে আরও compact */
+        @media (max-height: 640px) {
+            .icon { width: 46px; height: 46px; font-size: 24px; margin-bottom: 5px; }
+            .msg { margin: 4px 0 10px; }
+            .step { padding: 4px 0; }
+            .head img { max-height: 38px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="head">
+            {% if logo_url %}<img src="{{ logo_url }}" alt="{{ company_name }}">
+            {% else %}<div class="name">{{ company_name }}</div>{% endif %}
+        </div>
+
+        <div class="body">
+            <div class="icon">⏳</div>
+            <h1>সংযোগের মেয়াদ শেষ</h1>
+            <p class="msg">
+                আপনার ইন্টারনেট প্যাকেজের মেয়াদ শেষ ও <b>বকেয়া বিল</b> রয়েছে।
+                সংযোগ চালু করতে অনুগ্রহ করে বিল পরিশোধ করুন।
+            </p>
+
+            <div class="steps">
+                <div class="t">কীভাবে বিল পরিশোধ করবেন</div>
+                <div class="step"><span class="num">১</span><span>নিচের <b>“অ্যাপ ডাউনলোড”</b> বাটনে চেপে অ্যাপটি ইনস্টল করুন</span></div>
+                <div class="step"><span class="num">২</span><span><b>কাস্টমার কোড</b> ও পাসওয়ার্ড দিয়ে লগইন করুন</span></div>
+                <div class="step"><span class="num">৩</span><span><b>bKash</b> দিয়ে বিল পরিশোধ করুন</span></div>
+                <div class="step"><span class="num">৪</span><span>কিছুক্ষণের মধ্যেই সংযোগ <b>স্বয়ংক্রিয়ভাবে</b> চালু হবে</span></div>
+            </div>
+
+            <a class="btn btn-app" href="/app/download" download="rajamehar.apk">📲 অ্যাপ ডাউনলোড করুন</a>
+            <div class="hint">ইনস্টলের পর লগইন করে <b>bKash</b> দিয়ে পরিশোধ করুন। “Unknown source” এলে <b>Allow</b> চাপুন।</div>
+
+            <div class="note">
+                📱 আপনার মোবাইলে <b>অ্যাপটি আগে থেকে ইনস্টল করা থাকলে</b> নতুন করে ইনস্টল করার দরকার নেই —
+                শুধু অ্যাপটি <b>খুলে লগইন করে</b> বিল পরিশোধ করুন। <br>
+                ইনস্টল করা <b>না থাকলে</b> উপরের বাটনে চেপে অ্যাপটি ইনস্টল করুন।
+            </div>
+
+            <!-- অ্যাপ ছাড়াও বিকাশ থেকে সরাসরি বিল পরিশোধের নির্দেশনা (ভিজ্যুয়াল ধাপ) -->
+            <details class="bk">
+                <summary>💳 অ্যাপ ছাড়া বিকাশ থেকে বিল দিন (ধাপগুলো দেখুন)</summary>
+                <div class="bk-body">
+                    <div class="bk-merchant">
+                        <div class="mname">Rajamehar Online — বিকাশ মার্চেন্ট</div>
+                        <div class="mno">01303326003</div>
+                        <div class="mamt">পরিমাণ: <b>আপনার প্যাকেজ অনুযায়ী</b></div>
+                        <div class="mamt" style="margin-top:4px; font-size:11px;">
+                            ⚠️ ছবিতে <b>৫০০৳</b> শুধু উদাহরণ — আপনার <b>প্যাকেজ/বিল</b> অনুযায়ী
+                            সঠিক টাকার পরিমাণ দিন।
+                        </div>
+                    </div>
+
+                    {% if guide_imgs %}
+                    <!-- আসল মোবাইল-স্ক্রিন গাইড ছবি (base64 inline), ২-কলাম grid -->
+                    <div class="bk-sec first"><span>📲 বিকাশ অ্যাপ দিয়ে ধাপে ধাপে</span></div>
+                    <div class="bk-imgs">
+                        {% for img in guide_imgs %}<img class="bk-img" src="{{ img }}" alt="ধাপ {{ forloop.counter }}" loading="lazy">{% endfor %}
+                    </div>
+                    {% else %}
+                    <!-- বিকাশ অ্যাপ দিয়ে (Make Payment) -->
+                    <div class="bk-sec first"><span>📲 বিকাশ অ্যাপ দিয়ে</span></div>
+                    <div class="bk-grid">
+                        <div class="bk-card app"><span class="bk-num">১</span>
+                            <div class="bk-scr">bKash App হোম<br><span class="hl">Make Payment</span></div>
+                            <div class="bk-bar"><span>Tap</span><span></span></div>
+                            <div class="bk-cap">অ্যাপ থেকে <b>Make Payment</b> সিলেক্ট করুন</div>
+                        </div>
+                        <div class="bk-card app"><span class="bk-num">২</span>
+                            <div class="bk-scr">Merchant No:<br><span class="big">01303326003</span></div>
+                            <div class="bk-bar"><span>→</span><span></span></div>
+                            <div class="bk-cap"><b>Rajamehar Online</b> মার্চেন্ট নম্বর দিন (বা QR scan)</div>
+                        </div>
+                        <div class="bk-card app"><span class="bk-num">৩</span>
+                            <div class="bk-scr">Amount:<br><span class="big">৳ 500</span></div>
+                            <div class="bk-bar"><span>→</span><span></span></div>
+                            <div class="bk-cap"><b>প্যাকেজ অনুযায়ী</b> টাকার পরিমাণ দিন (৫০০ উদাহরণ)</div>
+                        </div>
+                        <div class="bk-card app"><span class="bk-num">৪</span>
+                            <div class="bk-scr">Reference:<br><b>5xxx</b></div>
+                            <div class="bk-bar"><span>→</span><span></span></div>
+                            <div class="bk-cap">রেফারেন্সে <b>আপনার কাস্টমার আইডি/Code: 5xxx</b> দিন</div>
+                        </div>
+                        <div class="bk-card app"><span class="bk-num">৫</span>
+                            <div class="bk-scr">Enter PIN:<br><b>•••••</b></div>
+                            <div class="bk-bar"><span>→</span><span></span></div>
+                            <div class="bk-cap">আপনার <b>বিকাশ PIN</b> দিন</div>
+                        </div>
+                        <div class="bk-card app"><span class="bk-num">৬</span>
+                            <div class="bk-scr">✅ Payment<br>successful</div>
+                            <div class="bk-bar"><span>Tap &amp; hold</span><span></span></div>
+                            <div class="bk-cap"><b>Tap &amp; hold</b> করে Pay → কনফার্মেশন</div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- *247# ডায়াল করে — ছবি থাকুক বা না থাকুক, সবসময় দেখাবে -->
+                    <div class="bk-sec"><span>অথবা *247# ডায়াল করে</span></div>
+                    <div class="bk-grid">
+                        <div class="bk-card"><span class="bk-num">১</span>
+                            <div class="bk-scr"><span class="big">*247#</span></div>
+                            <div class="bk-bar"><span>Send</span><span>Exit</span></div>
+                            <div class="bk-cap">বিকাশ মেনুতে <b>*247#</b> ডায়াল করুন</div>
+                        </div>
+                        <div class="bk-card"><span class="bk-num">২</span>
+                            <div class="bk-scr"><span class="hl">4. Payment</span></div>
+                            <div class="bk-bar"><span>Send</span><span>Exit</span></div>
+                            <div class="bk-cap"><b>Payment</b> অপশন সিলেক্ট করুন</div>
+                        </div>
+                        <div class="bk-card"><span class="bk-num">৩</span>
+                            <div class="bk-scr">Merchant No:<br><span class="big">01303326003</span></div>
+                            <div class="bk-bar"><span>Send</span><span>Exit</span></div>
+                            <div class="bk-cap"><b>Rajamehar Online</b> মার্চেন্ট নম্বর দিন</div>
+                        </div>
+                        <div class="bk-card"><span class="bk-num">৪</span>
+                            <div class="bk-scr">Amount:<br><span class="big">500</span></div>
+                            <div class="bk-bar"><span>Send</span><span>Exit</span></div>
+                            <div class="bk-cap"><b>প্যাকেজ অনুযায়ী</b> টাকার পরিমাণ দিন (৫০০ উদাহরণ)</div>
+                        </div>
+                        <div class="bk-card"><span class="bk-num">৫</span>
+                            <div class="bk-scr">Reference:<br><b>5xxx</b></div>
+                            <div class="bk-bar"><span>Send</span><span>Exit</span></div>
+                            <div class="bk-cap">রেফারেন্সে <b>আপনার কাস্টমার আইডি/Code: 5xxx</b> দিন</div>
+                        </div>
+                        <div class="bk-card"><span class="bk-num">৬</span>
+                            <div class="bk-scr">Counter No:<br><span class="big">1</span></div>
+                            <div class="bk-bar"><span>Send</span><span>Exit</span></div>
+                            <div class="bk-cap">Counter চাইলে <b>1</b> দিন</div>
+                        </div>
+                        <div class="bk-card"><span class="bk-num">৭</span>
+                            <div class="bk-scr">Enter PIN:<br><b>•••••</b></div>
+                            <div class="bk-bar"><span>Send</span><span>Exit</span></div>
+                            <div class="bk-cap">আপনার <b>বিকাশ PIN</b> দিয়ে confirm করুন</div>
+                        </div>
+                        <div class="bk-card"><span class="bk-num">৮</span>
+                            <div class="bk-scr">✅ Payment<br>successful</div>
+                            <div class="bk-bar"><span>OK</span><span></span></div>
+                            <div class="bk-cap">কনফার্মেশন <b>SMS</b> পাবেন</div>
+                        </div>
+                    </div>
+
+                    <div class="hint" style="margin-top:11px; text-align:center">
+                        ⚠️ <b>Reference</b>-এ অবশ্যই আপনার <b>Customer ID/Code: 5xxx</b> দিন — তা না হলে বিল মেলানো যাবে না।
+                        পেমেন্ট সফল হলে কিছুক্ষণে সংযোগ <b>স্বয়ংক্রিয়ভাবে</b> চালু হবে।
+                    </div>
+                </div>
+            </details>
+
+            {% if website %}<a class="btn btn-portal" href="{{ website }}">🌐 অথবা ওয়েব পোর্টালে লগইন করুন</a>{% endif %}
+
+            {% if phone %}
+            <div class="hotline">
+                <span>সাহায্য প্রয়োজন? কল করুন</span><br>
+                <a href="tel:{{ phone }}">📞 {{ phone }}</a>
+            </div>
+            {% endif %}
+
+            <div class="foot">© {{ company_name }} </div>
+        </div>
+    </div>
+</body>
+</html>
