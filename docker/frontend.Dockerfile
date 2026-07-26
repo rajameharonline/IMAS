@@ -11,10 +11,10 @@
 # engines: node ^20.19.0 || >=22.12.0 চায় — এর নিচে থাকলে npm optional দেপ silently
 # skip করে আর build "Cannot find module rolldown-binding..." দিয়ে fail করে।
 # 22-alpine দিয়ে এই সীমা নিয়ে কোনো অস্পষ্টতা রাখা হলো না।
-ARG NODE_VERSION=22-alpine
-
-# --- admin_panel ---
-FROM node:${NODE_VERSION} AS admin_panel_build
+# (ARG দিয়ে parametrize করা হয়নি ইচ্ছাকৃতভাবে — Coolify-র build-secrets Dockerfile
+# rewriter প্রতিটা stage-এ নিজের ARG ইনজেক্ট করে, যেটা global ARG-ভিত্তিক
+# FROM node:${NODE_VERSION} প্যাটার্নকে ভেঙে "invalid reference format" error দিয়েছিল)
+FROM node:22-alpine AS admin_panel_build
 WORKDIR /src
 COPY admin_panel/package.json admin_panel/package-lock.json ./
 # --legacy-peer-deps: react-leaflet@4.2.1-এর peerDependency react@^18.0.0 এখনো
@@ -30,7 +30,7 @@ ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
 RUN npm run build
 
 # --- user_portal ---
-FROM node:${NODE_VERSION} AS user_portal_build
+FROM node:22-alpine AS user_portal_build
 WORKDIR /src
 COPY user_portal/package.json user_portal/package-lock.json ./
 RUN npm ci --legacy-peer-deps
