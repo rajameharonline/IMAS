@@ -1,4 +1,4 @@
-# ISP-BNAS Django monolith — app + celery worker + celery beat একই image ব্যবহার করে
+# IMAS Django monolith — app + celery worker + celery beat একই image ব্যবহার করে
 # (command শুধু docker-compose.yml-এ ভিন্ন হবে)
 FROM python:3.14-slim
 
@@ -13,12 +13,15 @@ ARG APP_GID=973
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
-        default-libmysqlclient-dev \
+        libpq-dev \
         ffmpeg \
         gcc \
         pkg-config \
         snmp \
     && rm -rf /var/lib/apt/lists/*
+# libpq-dev = PostgreSQL client lib (psycopg[binary] wheel নিজেই libpq bundle করে,
+# তবু psycopg source fallback/health-check টুলের জন্য রাখা হলো — MySQL client lib
+# আর দরকার নেই যেহেতু প্রজেক্ট PostgreSQL-এ কনভার্ট হয়ে গেছে, settings.py দ্রষ্টব্য)
 # snmp প্যাকেজ (snmpwalk binary) দরকার olt_mgmt/services/snmp_service.py-এর জন্য —
 # এটা ছাড়া celery worker olt_mgmt.link_onu_clients/sync_all_olts_mac_table টাস্কে
 # silently খালি/ভুল ফলাফল (0 CPE MAC entries) DB-তে লিখে দেয়, কোনো visible crash ছাড়াই।
@@ -35,7 +38,7 @@ RUN groupadd -g ${APP_GID} isp \
 # owner amir, group www-data) লিখতে পারে — কন্টেইনারেও একই সদস্যতা না দিলে
 # PermissionError হবে (isp_bnas.log-এর মতো ফাইলে, যেগুলো world-writable না)
 
-WORKDIR /var/www/isp_bnas
+WORKDIR /var/www/IMAS
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -47,7 +50,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN mkdir -p logs staticfiles media \
-    && chown -R isp:isp /var/www/isp_bnas
+    && chown -R isp:isp /var/www/IMAS
 
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh

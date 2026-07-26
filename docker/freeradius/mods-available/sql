@@ -1,0 +1,21 @@
+# FreeRADIUS SQL module — PostgreSQL, credentials env var থেকে ($ENV{} FreeRADIUS-এর
+# নিজস্ব native syntax, hardcode নয়) — docker-compose.yml-এ env_file: .env থেকে আসে।
+# PRD_POSTGRES_REBUILD.md §7.1-এর সমতুল্য।
+sql {
+    driver = "rlm_sql_postgresql"
+    dialect = "postgresql"
+
+    server = "$ENV{RADIUS_DB_HOST}"
+    port = $ENV{RADIUS_DB_PORT}
+    login = "$ENV{RADIUS_DB_USER}"
+    password = "$ENV{RADIUS_DB_PASSWORD}"
+    radius_db = "$ENV{RADIUS_DB_NAME}"
+
+    # MikroTik (NAS) ক্লায়েন্ট সংজ্ঞা DB-এর `nas` টেবিল থেকে পড়া (radius_app-এ
+    # আলাদা static clients.conf maintain না করে) — CLAUDE.md-এর RadiusServer
+    # মডেলের সাথে সামঞ্জস্যপূর্ণ
+    read_clients = yes
+    client_table = "nas"
+
+    $INCLUDE ${modconfdir}/${.:name}/main/postgresql/queries.conf
+}
