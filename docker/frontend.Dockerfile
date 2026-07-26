@@ -31,6 +31,12 @@ RUN npm run build
 
 # --- user_portal ---
 FROM node:22-alpine AS user_portal_build
+# admin_panel_build স্টেজের উপর একটা কৃত্রিম নির্ভরতা — এই COPY না থাকলে BuildKit
+# দুটো independent Node/Vite build (ভারী: xlsx/leaflet/jspdf/recharts সহ) একসাথে
+# parallel-এ চালাত, যেটা কম-RAM সার্ভারে (~3.3G, build-এর আগেই মাত্র ~1.5G ফাঁকা)
+# OOM kill ঘটিয়ে exit code 255 দিচ্ছিল কোনো স্পষ্ট error ছাড়াই। এই dependency দিয়ে
+# দুটো build সিরিয়ালি চলতে বাধ্য হয়, peak memory কমে।
+COPY --from=admin_panel_build /src/dist /tmp/_admin_panel_dist_marker
 WORKDIR /src
 COPY user_portal/package.json user_portal/package-lock.json ./
 RUN npm ci --legacy-peer-deps
